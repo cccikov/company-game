@@ -1,7 +1,173 @@
-@import url("./reset.less");
 @import url("./common.less");
-div{
-    height: 10rem;
-    line-height: 10rem;
-    background: #f00;
+html,
+body {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    // 滚动条
+    width: 0;
+}
+
+#wrap {
+    height: 100%;
+}
+
+.top {
+    &>a:nth-of-type(1) {
+        float: left;
+        width: @top;
+        height: @top;
+        background: url(../images/download.png) center/55% no-repeat;
+    }
+    &>a:nth-of-type(2) {
+        float: right;
+        width: @top;
+        height: @top;
+        background: url(../images/share.png) center/50% no-repeat;
+    }
+    &>div {
+        display: inline-block;
+        line-height: 1;
+        margin: -3px 0 0;
+        vertical-align: middle;
+        background: #d86c00;
+        border-radius: 5px;
+        a {
+            width: 4.5rem;
+            height: 25px;
+            line-height: 25px;
+            border-radius: 5px;
+            &:nth-of-type(1) {
+                float: left;
+            }
+            &:nth-of-type(2) {
+                float: right;
+            }
+            &.active {
+                background: #ffffff;
+                color: @maincolor;
+            }
+        }
+    }
+}
+
+.main {
+    box-sizing: border-box;
+    height: 100%;
+    padding: @top 0 @bottom;
+    .content {
+        height: 100%;
+        overflow: auto;
+        // 新游
+        .new {
+            padding: 0 0 1rem;
+            background: #fff;
+            .new-top {
+                .clearfix();
+                line-height: 2.5rem;
+                span {
+                    float: left;
+                    font-size: 1rem;
+                    color: @maincolor;
+                    padding: 0 5%;
+                }
+                a {
+                    float: right;
+                    font-size: 0.7rem;
+                    color: #00b285;
+                    padding: 0 1rem;
+                }
+            }
+            .new-list {
+                text-align: center;
+                .clearfix();
+                li {
+                    float: left;
+                    width: 18.75%;
+                    margin: 0 5% 0 0;
+                    &:nth-of-type(1) {
+                        margin: 0 5% 0 5%;
+                    }
+                    p {
+                        font-size: 0.75rem;
+                        line-height: 1;
+                        margin: 0.45rem -0.2rem;
+                        .elli();
+                        &:nth-of-type(2) {
+                            font-size: @minfont;
+                            color: #73b9ff;
+                        }
+                    }
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        border: 1px solid @maincolor;
+                        border-radius: 1rem;
+                        font-size: 0.9rem;
+                        line-height: 1.8;
+                        color: @maincolor;
+                        &.active {
+                            color: #fff;
+                            background: @maincolor;
+                        }
+                    }
+                }
+            }
+        }
+        // 活动
+        .activity {
+            a.list-item{
+                background: #fff url(../images/arrow.png) right 5% center/1.8rem no-repeat;
+            }
+            .list-item {
+                display:block;
+                padding: 4% 0;
+                margin: 12px 0;
+                background: #fff;
+                .clearfix();
+                img {
+                    float: left;
+                    width: 18.75%;
+                    margin: 0 3% 0 5%
+                }
+                .item-middle {
+                    float: left;
+                    width: 58.25%;
+                    min-height: 3.75rem;
+                    h5 {
+                        margin:1% 0 3%;
+                        font-size: 0.9rem;
+                        font-weight: bold;
+                    }
+                    p {
+                        font-size: 0.75rem;
+                        .elli();
+                        &:nth-of-type(1){
+                            margin:0 0 3%;
+                        }
+                        &:nth-of-type(2) {
+                            color: #707070;
+                        }
+                    }
+                    .item-label {
+                        display:inline-block;
+                        padding:3px;
+                        font-size: @minfont;
+                        color: #fff;
+                        background: @maincolor;
+                        &.blue{
+                            background: #24c9ff;
+                        }
+                        &.green{
+                            background: #00b285;
+                        }
+                    }
+                }
+                .to-activity{ // 只剩下15% 100-18.75-3-5-58.25 = 15
+
+                }
+            }
+        }
+    }
 }

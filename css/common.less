@@ -1,3 +1,107 @@
-*{
-    font-size : 16px;
+@import url("./reset.less");
+@maincolor : #ff9123;
+@bgcolor : #eeeeee;
+@top: 45px;
+@bottom :55px;
+@perwidth: 5%;
+@minfont:0.6rem;
+img {
+    display: block;
+    max-width: 100%;
+}
+
+-webkit-tap-highlight-color {
+    background:rgba(0,0,0,0);
+}
+
+body {
+    font: 0.85rem /1 "微软雅黑 Verdana, Arial, simsun ";
+    color: #464646;
+    background: @bgcolor;
+}
+
+
+/* 顶部导航共用 */
+
+.top {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 2px;
+    line-height: @top;
+    background: @maincolor;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+
+/* 底部导航共用 */
+
+.bottom {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: @bottom;
+    border-top: 1px solid #bfbfbf;
+    background: @bgcolor;
+    text-align: center;
+    font-size: @minfont;
+    a {
+        position: relative;
+        float: left;
+        width: 20%;
+        height: 100%;
+        color: #868686;
+        &:before {
+            content: "";
+            display: block;
+            height: 30px;
+            margin: 3px 0 0;
+        }
+        &:nth-of-type(1):before {
+            background: url(../images/index_01.png) center/contain no-repeat;
+        }
+        &:nth-of-type(2):before {
+            background: url(../images/index_02.png) center/contain no-repeat;
+        }
+        &:nth-of-type(3):before {
+            background: url(../images/index_03.png) center/contain no-repeat;
+        }
+        &:nth-of-type(4):before {
+            background: url(../images/index_04.png) center/contain no-repeat;
+        }
+        &:nth-of-type(5):before {
+            background: url(../images/index_05.png) center/contain no-repeat;
+        }
+        &.active {
+            color: @maincolor;
+            &:nth-of-type(1):before {
+                background: url(../images/index_c01.png) center/contain no-repeat;
+            }
+            &:nth-of-type(2):before {
+                background: url(../images/index_c02.png) center/contain no-repeat;
+            }
+            &:nth-of-type(3):before {
+                background: url(../images/index_c03.png) center/contain no-repeat;
+            }
+            &:nth-of-type(4):before {
+                background: url(../images/index_c04.png) center/contain no-repeat;
+            }
+            &:nth-of-type(5):before {
+                background: url(../images/index_c05.png) center/contain no-repeat;
+            }
+        }
+        span {
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            line-height: 1;
+        }
+    }
 }
