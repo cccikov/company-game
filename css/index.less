@@ -1,16 +1,83 @@
+@import url("../plug/idangerous.swiper.css");
 @import url("./common.less");
-html,
-body {
-    height: 100%;
+.list-item() {
+    position: relative;
+    display: block;
+    padding: 4% 0;
+    margin: 12px 0;
+    background: #fff;
+    .clearfix();
+    img {
+        float: left;
+        width: 18.75%;
+        margin: 0 3% 0 5%
+    }
+    .item-middle {
+        float: left;
+        width: 58.25%;
+        min-height: 3.75rem;
+        h5 {
+            line-height:1.5;
+            margin:0 0 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            .elli();
+            .discount{
+                .discount();
+            }
+        }
+        p {
+            color: #707070;
+            .elli();
+            &:nth-of-type(1) {
+                margin: 0 0 3%;
+                font-size: 0;
+                .clearfix();
+            }
+            &:nth-of-type(2) {
+                font-size: 0.75rem;
+            }
+            span {
+                padding: 3px 0;
+                vertical-align:middle;
+                margin: 0 5px 0 0;
+                font-size: @minfont;
+                &.item-intro:nth-of-type(1):after {
+                    content: "";
+                    display: inline-block;
+                    height: @minfont;
+                    border-right: 1px solid #707070;
+                    margin: -3px 0 0 5px;
+                    vertical-align: middle;
+                }
+            }
+        }
+        .item-label {
+            display: inline-block;
+            padding: 3px;
+            color: #fff;
+            font-size: 10px;
+            background: @maincolor;
+            &.blue {
+                background: #24c9ff;
+            }
+            &.green {
+                background: #00b285;
+            }
+        }
+    }
 }
 
-::-webkit-scrollbar {
-    // 滚动条
-    width: 0;
-}
 
-#wrap {
+
+html {
     height: 100%;
+    body {
+        height: 100%;
+        #wrap {
+            height: 100%;
+        }
+    }
 }
 
 .top {
@@ -85,10 +152,7 @@ body {
                 li {
                     float: left;
                     width: 18.75%;
-                    margin: 0 5% 0 0;
-                    &:nth-of-type(1) {
-                        margin: 0 5% 0 5%;
-                    }
+                    margin: 0 0 0 5%;
                     p {
                         font-size: 0.75rem;
                         line-height: 1;
@@ -117,55 +181,43 @@ body {
         }
         // 活动
         .activity {
-            a.list-item{
-                background: #fff url(../images/arrow.png) right 5% center/1.8rem no-repeat;
-            }
             .list-item {
-                display:block;
-                padding: 4% 0;
-                margin: 12px 0;
-                background: #fff;
-                .clearfix();
-                img {
-                    float: left;
-                    width: 18.75%;
-                    margin: 0 3% 0 5%
-                }
-                .item-middle {
-                    float: left;
-                    width: 58.25%;
-                    min-height: 3.75rem;
-                    h5 {
-                        margin:1% 0 3%;
-                        font-size: 0.9rem;
-                        font-weight: bold;
-                    }
-                    p {
-                        font-size: 0.75rem;
-                        .elli();
-                        &:nth-of-type(1){
-                            margin:0 0 3%;
-                        }
-                        &:nth-of-type(2) {
-                            color: #707070;
-                        }
-                    }
-                    .item-label {
-                        display:inline-block;
-                        padding:3px;
-                        font-size: @minfont;
-                        color: #fff;
-                        background: @maincolor;
-                        &.blue{
-                            background: #24c9ff;
-                        }
-                        &.green{
-                            background: #00b285;
-                        }
-                    }
-                }
-                .to-activity{ // 只剩下15% 100-18.75-3-5-58.25 = 15
-
+                .list-item();
+            }
+            .item-action {
+                // 15%
+                position: absolute;
+                top: 50%;
+                right: 3.5%;
+                padding: 4.5%; // 相当于宽高都为父标签宽度的9%;
+                transform: translate(0, -50%);
+                background: url(../images/arrow.png) center/contain no-repeat;
+            }
+        }
+        // 游戏列表
+        .game {
+            .list-item {
+                .list-item();
+            }
+            .item-action {
+                // 15%
+                position: absolute;
+                top: 50%;
+                right: 3%;
+                padding: 5%; // 相当于宽高都为父标签宽度的10%;
+                transform: translate(0, -50%);
+                background: #5bd7ff;
+                border-radius: 50%;
+                &:before {
+                    content: "下载";
+                    position: absolute;
+                    width: 100%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #fff;
+                    font-size: @minfont;
+                    text-align: center;
                 }
             }
         }

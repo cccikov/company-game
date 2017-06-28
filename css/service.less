@@ -1,0 +1,119 @@
+@import url("../plug/idangerous.swiper.css");
+@import url("./common.less");
+html {
+    height: 100%;
+    body {
+        height: 100%;
+        background: #fff;
+        #wrap {
+            height: 100%;
+        }
+    }
+}
+
+.top {
+    &>a:nth-of-type(1) {
+        float: left;
+        width: @top;
+        height: @top;
+        background: url(../images/download.png) center/55% no-repeat;
+    }
+    &>a:nth-of-type(2) {
+        float: right;
+        width: @top;
+        height: @top;
+        background: url(../images/share.png) center/50% no-repeat;
+    }
+    &>div {
+        display: inline-block;
+        line-height: 1;
+        margin: -3px 0 0;
+        vertical-align: middle;
+        background: #d86c00;
+        border-radius: 5px;
+        a {
+            width: 4.5rem;
+            height: 25px;
+            line-height: 25px;
+            border-radius: 5px;
+            &:nth-of-type(1) {
+                float: left;
+            }
+            &:nth-of-type(2) {
+                float: right;
+            }
+            &.active {
+                background: #ffffff;
+                color: @maincolor;
+            }
+        }
+    }
+}
+
+.main {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+    padding: @top 0 @bottom;
+    .service-list {
+        padding:10px 0 0;
+        .service-item {
+            margin: 20px 0;
+            i {
+                display: inline-block;
+                padding: 6px 50px 6px 12px;
+                background: #60d8ff url(../images/service1.png) right center/contain no-repeat;
+                color: #fff;
+                font-style: normal;
+            }
+            section {
+                .clearfix();
+                a {
+                    float: left;
+                    width: 41%;
+                    margin: 15px 0 0 6%;
+                    img {
+                        float: left;
+                        width: 3.2rem;
+                        margin: 0 0 10px;
+                    }
+                    div {
+                        margin: 0 0 0 3.5rem;
+                        color: #1e1e1e;
+                        p {
+                            font-size: 0.8rem;
+                            .elli();
+                            &:nth-of-type(1) {
+                                line-height: 2;
+                            }
+                            &:nth-of-type(2) {
+                                line-height: 1.5;
+                                margin: 0 0 10px;
+                                span {
+                                    font-size: 0.7rem;
+                                    vertical-align: middle;
+                                    color: #10cdad;
+                                    &.discount {
+                                        .discount();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    em {
+                        display: block;
+                        width: 90%;
+                        line-height: 1.8;
+                        border-radius: 50px;
+                        font-size: 0.7rem;
+                        font-style: normal;
+                        clear: both;
+                        color: #f27900;
+                        background: #ffefdf;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

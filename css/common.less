@@ -5,14 +5,41 @@
 @bottom :55px;
 @perwidth: 5%;
 @minfont:0.6rem;
-img {
-    display: block;
-    max-width: 100%;
+
+.scrollbar(){
+    ::-webkit-scrollbar {
+        // 滚动条
+        width: 0;
+    }
 }
 
--webkit-tap-highlight-color {
-    background:rgba(0,0,0,0);
+.discount(){
+    position:relative;
+    display:inline-block;
+    line-height:1;
+    padding:3px 6px 2px 16px;
+    border-radius:10px;
+    margin:-3px 0 0 5px;
+    vertical-align:middle;
+    font-size:10px;
+    font-weight:300;
+    color:#fff;
+    background: #e2213e url(../images/point.png) left 5px center/7px no-repeat;
+    // &:before{
+    //     content:"";
+    //     position:absolute;
+    //     top:50%;
+    //     left:5px;
+    //     transform:translate(0,-50%);
+    //     width:7px;
+    //     height:7px;
+    //     border-radius:5px;
+    //     background: #fff;
+    // }
 }
+
+
+
 
 body {
     font: 0.85rem /1 "微软雅黑 Verdana, Arial, simsun ";
@@ -20,7 +47,12 @@ body {
     background: @bgcolor;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+}
 
+.scrollbar();
 /* 顶部导航共用 */
 
 .top {
@@ -50,7 +82,7 @@ body {
     border-top: 1px solid #bfbfbf;
     background: @bgcolor;
     text-align: center;
-    font-size: @minfont;
+    font-size: 12px;
     a {
         position: relative;
         float: left;

@@ -1,3 +1,4 @@
+@import url("../plug/idangerous.swiper.css");
 /* 代替base.css作为清除默认样式less */
 * {
   margin: 0;
@@ -17,17 +18,17 @@ li {
 .mouse-hover:hover {
   text-decoration: underline;
 }
-img {
-  display: block;
-  max-width: 100%;
-}
--webkit-tap-highlight-color {
-  background: rgba(0, 0, 0, 0);
-}
 body {
   font: 0.85rem / 1 "微软雅黑 Verdana, Arial, simsun ";
   color: #464646;
   background: #eeeeee;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+::-webkit-scrollbar {
+  width: 0;
 }
 /* 顶部导航共用 */
 .top {
@@ -54,7 +55,7 @@ body {
   border-top: 1px solid #bfbfbf;
   background: #eeeeee;
   text-align: center;
-  font-size: 0.6rem;
+  font-size: 12px;
 }
 .bottom a {
   position: relative;
@@ -109,14 +110,13 @@ body {
   width: 100%;
   line-height: 1;
 }
-html,
-body {
+html {
   height: 100%;
 }
-::-webkit-scrollbar {
-  width: 0;
+html body {
+  height: 100%;
 }
-#wrap {
+html body #wrap {
   height: 100%;
 }
 .top > a:nth-of-type(1) {
@@ -199,10 +199,7 @@ body {
 .main .content .new .new-list li {
   float: left;
   width: 18.75%;
-  margin: 0 5% 0 0;
-}
-.main .content .new .new-list li:nth-of-type(1) {
-  margin: 0 5% 0 5%;
+  margin: 0 0 0 5%;
 }
 .main .content .new .new-list li p {
   font-size: 0.75rem;
@@ -229,10 +226,8 @@ body {
   color: #fff;
   background: #ff9123;
 }
-.main .content .activity a.list-item {
-  background: #fff url(../images/arrow.png) right 5% center / 1.8rem no-repeat;
-}
 .main .content .activity .list-item {
+  position: relative;
   display: block;
   padding: 4% 0;
   margin: 12px 0;
@@ -254,27 +249,64 @@ body {
   min-height: 3.75rem;
 }
 .main .content .activity .list-item .item-middle h5 {
-  margin: 1% 0 3%;
+  line-height: 1.5;
+  margin: 0 0 5px;
   font-size: 0.9rem;
   font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.main .content .activity .list-item .item-middle h5 .discount {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  padding: 3px 6px 2px 16px;
+  border-radius: 10px;
+  margin: -3px 0 0 5px;
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: 300;
+  color: #fff;
+  background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
 }
 .main .content .activity .list-item .item-middle p {
-  font-size: 0.75rem;
+  color: #707070;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .main .content .activity .list-item .item-middle p:nth-of-type(1) {
   margin: 0 0 3%;
+  font-size: 0;
+}
+.main .content .activity .list-item .item-middle p:nth-of-type(1):after {
+  content: '';
+  display: block;
+  clear: both;
 }
 .main .content .activity .list-item .item-middle p:nth-of-type(2) {
-  color: #707070;
+  font-size: 0.75rem;
+}
+.main .content .activity .list-item .item-middle p span {
+  padding: 3px 0;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+  font-size: 0.6rem;
+}
+.main .content .activity .list-item .item-middle p span.item-intro:nth-of-type(1):after {
+  content: "";
+  display: inline-block;
+  height: 0.6rem;
+  border-right: 1px solid #707070;
+  margin: -3px 0 0 5px;
+  vertical-align: middle;
 }
 .main .content .activity .list-item .item-middle .item-label {
   display: inline-block;
   padding: 3px;
-  font-size: 0.6rem;
   color: #fff;
+  font-size: 10px;
   background: #ff9123;
 }
 .main .content .activity .list-item .item-middle .item-label.blue {
@@ -282,4 +314,121 @@ body {
 }
 .main .content .activity .list-item .item-middle .item-label.green {
   background: #00b285;
+}
+.main .content .activity .item-action {
+  position: absolute;
+  top: 50%;
+  right: 3.5%;
+  padding: 4.5%;
+  transform: translate(0, -50%);
+  background: url(../images/arrow.png) center / contain no-repeat;
+}
+.main .content .game .list-item {
+  position: relative;
+  display: block;
+  padding: 4% 0;
+  margin: 12px 0;
+  background: #fff;
+}
+.main .content .game .list-item:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.main .content .game .list-item img {
+  float: left;
+  width: 18.75%;
+  margin: 0 3% 0 5%;
+}
+.main .content .game .list-item .item-middle {
+  float: left;
+  width: 58.25%;
+  min-height: 3.75rem;
+}
+.main .content .game .list-item .item-middle h5 {
+  line-height: 1.5;
+  margin: 0 0 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.main .content .game .list-item .item-middle h5 .discount {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  padding: 3px 6px 2px 16px;
+  border-radius: 10px;
+  margin: -3px 0 0 5px;
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: 300;
+  color: #fff;
+  background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
+}
+.main .content .game .list-item .item-middle p {
+  color: #707070;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.main .content .game .list-item .item-middle p:nth-of-type(1) {
+  margin: 0 0 3%;
+  font-size: 0;
+}
+.main .content .game .list-item .item-middle p:nth-of-type(1):after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.main .content .game .list-item .item-middle p:nth-of-type(2) {
+  font-size: 0.75rem;
+}
+.main .content .game .list-item .item-middle p span {
+  padding: 3px 0;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+  font-size: 0.6rem;
+}
+.main .content .game .list-item .item-middle p span.item-intro:nth-of-type(1):after {
+  content: "";
+  display: inline-block;
+  height: 0.6rem;
+  border-right: 1px solid #707070;
+  margin: -3px 0 0 5px;
+  vertical-align: middle;
+}
+.main .content .game .list-item .item-middle .item-label {
+  display: inline-block;
+  padding: 3px;
+  color: #fff;
+  font-size: 10px;
+  background: #ff9123;
+}
+.main .content .game .list-item .item-middle .item-label.blue {
+  background: #24c9ff;
+}
+.main .content .game .list-item .item-middle .item-label.green {
+  background: #00b285;
+}
+.main .content .game .item-action {
+  position: absolute;
+  top: 50%;
+  right: 3%;
+  padding: 5%;
+  transform: translate(0, -50%);
+  background: #5bd7ff;
+  border-radius: 50%;
+}
+.main .content .game .item-action:before {
+  content: "下载";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 0.6rem;
+  text-align: center;
 }

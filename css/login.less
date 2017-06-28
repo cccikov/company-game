@@ -1,0 +1,96 @@
+@import url("./common.less");
+body {
+    background: #f0f0f0;
+}
+
+.input() {
+    padding: 15px 20px;
+    border-radius: 5px;
+    transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
+}
+
+.main {
+    box-sizing: border-box;
+    padding: 20+@top 0 0;
+    text-align: center;
+    label {
+        display: block;
+        width: 92%;
+        margin: 16px auto;
+        text-align: left;
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid #fff;
+            color: #757575;
+            .input();
+            &:focus {
+                border-color: #66afe9;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+            }
+        }
+    }
+    label.get {
+        position: relative;
+        input {
+            padding-right: 35%;
+        }
+        a {
+            position:absolute;
+            top:0;
+            right:0;
+            width:30%;
+            padding: 15px 0;
+            border: 1px solid @maincolor;
+            border-radius: 5px;
+            text-align: center;
+            background: @maincolor;
+            color:#fff;
+        }
+    }
+    .signup-action {
+        width: 92%;
+        margin: 16px auto;
+        text-align: left;
+        color: #757575;
+        a {
+            padding: 0 30px 30px 0;
+        }
+    }
+    button {
+        width: 92%;
+        color: #fff;
+        background: @maincolor;
+        border: 1px solid @maincolor;
+        .input();
+        &:focus {
+            opacity: 0.8;
+        }
+    }
+    .login-action {
+        padding: 1.5rem 0 0;
+        .clearfix();
+        p {
+            float: left;
+            width: 50%;
+            &:nth-of-type(1) a {
+                background: #249100 url(../images/login_01.png) top 12% center/48% no-repeat;
+            }
+            &:nth-of-type(2) a {
+                background: #0085b2 url(../images/login_02.png) top 12% center/48% no-repeat;
+            }
+            a {
+                box-sizing: border-box;
+                display: inline-block;
+                width: 4rem;
+                height: 4rem;
+                padding: 2.5rem 0 0;
+                border-radius: 50%;
+                color: #fff;
+                font-size: @minfont;
+            }
+        }
+    }
+}

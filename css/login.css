@@ -109,3 +109,99 @@ img {
   width: 100%;
   line-height: 1;
 }
+body {
+  background: #f0f0f0;
+}
+.main {
+  box-sizing: border-box;
+  padding: 65px 0 0;
+  text-align: center;
+}
+.main label {
+  display: block;
+  width: 92%;
+  margin: 16px auto;
+  text-align: left;
+}
+.main label input {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #fff;
+  color: #757575;
+  padding: 15px 20px;
+  border-radius: 5px;
+  transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
+}
+.main label input:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+.main label.get {
+  position: relative;
+}
+.main label.get input {
+  padding-right: 35%;
+}
+.main label.get a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  padding: 15px 0;
+  border: 1px solid #ff9123;
+  border-radius: 5px;
+  text-align: center;
+  background: #ff9123;
+  color: #fff;
+}
+.main .signup-action {
+  width: 92%;
+  margin: 16px auto;
+  text-align: left;
+  color: #757575;
+}
+.main .signup-action a {
+  padding: 0 30px 30px 0;
+}
+.main button {
+  width: 92%;
+  color: #fff;
+  background: #ff9123;
+  border: 1px solid #ff9123;
+  padding: 15px 20px;
+  border-radius: 5px;
+  transition: all cubic-bezier(0.22, 0.61, 0.36, 1) 0.3s;
+}
+.main button:focus {
+  opacity: 0.8;
+}
+.main .login-action {
+  padding: 1.5rem 0 0;
+}
+.main .login-action:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.main .login-action p {
+  float: left;
+  width: 50%;
+}
+.main .login-action p:nth-of-type(1) a {
+  background: #249100 url(../images/login_01.png) top 12% center / 48% no-repeat;
+}
+.main .login-action p:nth-of-type(2) a {
+  background: #0085b2 url(../images/login_02.png) top 12% center / 48% no-repeat;
+}
+.main .login-action p a {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  padding: 2.5rem 0 0;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.6rem;
+}
