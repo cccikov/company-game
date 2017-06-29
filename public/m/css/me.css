@@ -284,7 +284,7 @@ html body {
 }
 .me-function .contact a:nth-of-type(1):before {
   background-color: #49d78f;
-  background-image: url(../images/us_02.png);
+  background-image: url(../images/us_07.png);
 }
 .me-function .contact a:nth-of-type(2) {
   float: right;
@@ -292,7 +292,7 @@ html body {
 }
 .me-function .contact a:nth-of-type(2):before {
   background-color: #0dc0e9;
-  background-image: url(../images/us_02.png);
+  background-image: url(../images/us_08.png);
 }
 .me-function .contact p {
   overflow: hidden;

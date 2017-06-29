@@ -7,14 +7,14 @@ let reload = browserSync.reload;
 
 
 // 文件路径
-let lessBasePath = "less/"; // 这里需要设置base为lessPath的glob前面字符串 , 就算是"只转换修改的less文件方式"也不怕写入路径有问题了.但是这样如果lessPath是一个数组的时候就不行了 , 所以还是要搞一个任务,是装换后css就放在源less的所在文件夹
+let lessBasePath = "public/m/less/"; // 这里需要设置base为lessPath的glob前面字符串 , 就算是"只转换修改的less文件方式"也不怕写入路径有问题了.但是这样如果lessPath是一个数组的时候就不行了 , 所以还是要搞一个任务,是装换后css就放在源less的所在文件夹
 let lessPath = lessBasePath + "**/*.less"; // 需要装换less路径
-let less2cssPath = "css/"; // less装换css后存放路径
-let cssPath = "css/*.css"; // 需要压缩的css路径
-let css2miniPath = "css/min"; // 压缩后的css路径
+let less2cssPath = "public/m/css/"; // less装换css后存放路径
+let cssPath = "public/m/css/*.css"; // 需要压缩的css路径
+let css2miniPath = "public/m/css/min"; // 压缩后的css路径
 
-let browserSyncPath = ["themes/simplebootx/*.html","css/*.css","js/*.js"]; // 监视同步路径
-let browserSyncWithoutCssPath = ["themes/simplebootx/*.html","js/*.js"]; // 监视路径不要css
+let browserSyncPath = ["themes/simplebootx/*.html","public/m/css/*.css","public/m/js/*.js"]; // 监视同步路径
+let browserSyncWithoutCssPath = ["themes/simplebootx/*.html","public/m/js/*.js"]; // 监视路径不要css
 let browserSyncRootPath = "./";
 let browserSyncIndex = "enter.html"; // 服务器启动的时候,默认打开的文件
 
