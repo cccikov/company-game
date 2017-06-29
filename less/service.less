@@ -1,67 +1,23 @@
 @import url("../plug/idangerous.swiper.css");
 @import url("./common.less");
-html {
-    height: 100%;
-    body {
-        height: 100%;
-        background: #fff;
-        #wrap {
-            height: 100%;
-        }
-    }
-}
 
+/* service 样式 */
+
+.height100(#fff);
 .top {
-    &>a:nth-of-type(1) {
-        float: left;
-        width: @top;
-        height: @top;
-        background: url(../images/download.png) center/55% no-repeat;
-    }
-    &>a:nth-of-type(2) {
-        float: right;
-        width: @top;
-        height: @top;
-        background: url(../images/share.png) center/50% no-repeat;
-    }
-    &>div {
-        display: inline-block;
-        line-height: 1;
-        margin: -3px 0 0;
-        vertical-align: middle;
-        background: #d86c00;
-        border-radius: 5px;
-        a {
-            width: 4.5rem;
-            height: 25px;
-            line-height: 25px;
-            border-radius: 5px;
-            &:nth-of-type(1) {
-                float: left;
-            }
-            &:nth-of-type(2) {
-                float: right;
-            }
-            &.active {
-                background: #ffffff;
-                color: @maincolor;
-            }
-        }
-    }
+    .topLess();
 }
 
 .main {
-    box-sizing: border-box;
-    height: 100%;
+    .mainLess();
     overflow: auto;
-    padding: @top 0 @bottom;
     .service-list {
-        padding:10px 0 0;
+        padding: 10px 0 0;
         .service-item {
             margin: 20px 0;
             i {
                 display: inline-block;
-                padding: 6px 50px 6px 12px;
+                padding: 7px 50px 5px 12px;
                 background: #60d8ff url(../images/service1.png) right center/contain no-repeat;
                 color: #fff;
                 font-style: normal;
@@ -94,7 +50,7 @@ html {
                                     vertical-align: middle;
                                     color: #10cdad;
                                     &.discount {
-                                        .discount();
+                                        .discountLess();
                                     }
                                 }
                             }
@@ -116,4 +72,18 @@ html {
             }
         }
     }
+}
+
+// 搜开服
+.service-search {
+    position: fixed;
+    top: 20+@top;
+    right: 0;
+    z-index: 100;
+    line-height:1.5rem;
+    padding:2px 0.5rem 0 1.6rem;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    color:#5fd8ff;
+    background: #e1f8ff url(../images/search.png) left 0.4rem center/auto 60% no-repeat;
 }

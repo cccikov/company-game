@@ -4,26 +4,25 @@
 @top: 45px;
 @bottom :55px;
 @perwidth: 5%;
-@minfont:0.6rem;
-
-.scrollbar(){
+@minfont: 0.6rem;
+.scrollbarLess() {
     ::-webkit-scrollbar {
         // 滚动条
         width: 0;
     }
 }
 
-.discount(){
-    position:relative;
-    display:inline-block;
-    line-height:1;
-    padding:3px 6px 2px 16px;
-    border-radius:10px;
-    margin:-3px 0 0 5px;
-    vertical-align:middle;
-    font-size:10px;
-    font-weight:300;
-    color:#fff;
+.discountLess() {
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    padding: 3px 6px 2px 16px;
+    border-radius: 10px;
+    margin: -3px 0 0 5px;
+    vertical-align: middle;
+    font-size: 10px;
+    font-weight: 300;
+    color: #fff;
     background: #e2213e url(../images/point.png) left 5px center/7px no-repeat;
     // &:before{
     //     content:"";
@@ -38,13 +37,63 @@
     // }
 }
 
+// 主页 开服 交易top
+.topLess() {
+    padding: 0 2px;
+    &>a:nth-of-type(1) {
+        float: left;
+        width: @top;
+        height: @top;
+        background: url(../images/download.png) center/55% no-repeat;
+    }
+    &>a:nth-of-type(2) {
+        float: right;
+        width: @top;
+        height: @top;
+        background: url(../images/share.png) center/50% no-repeat;
+    }
+    &>div {
+        display: inline-block;
+        margin: -3px 0 0; // div 本身上下居中的
+        vertical-align: middle; // div 本身上下居中的
+        background: #d86c00;
+        border-radius: 5px;
+        a {
+            float: left;
+            width: 4.5rem;
+            height: 23px;
+            line-height: 23px;
+            padding: 2px 0 0;
+            border-radius: 5px;
+            &.active {
+                background: #ffffff;
+                color: @maincolor;
+            }
+        }
+    }
+}
+.mainLess(){
+    box-sizing: border-box;
+    height: 100%;
+    padding: @top 0 @bottom;
+}
 
-
+.height100(@bg: @bgcolor) {
+    html {
+        height: 100%;
+        body {
+            height: 100%;
+            background: @bg;
+            #wrap {
+                height: 100%;
+            }
+        }
+    }
+}
 
 body {
     font: 0.85rem /1 "微软雅黑 Verdana, Arial, simsun ";
     color: #464646;
-    background: @bgcolor;
 }
 
 img {
@@ -52,7 +101,8 @@ img {
     max-width: 100%;
 }
 
-.scrollbar();
+.scrollbarLess();
+
 /* 顶部导航共用 */
 
 .top {
@@ -60,13 +110,13 @@ img {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
     width: 100%;
-    padding: 0 2px;
     line-height: @top;
     background: @maincolor;
     color: #fff;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 
@@ -77,6 +127,7 @@ img {
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1000;
     width: 100%;
     height: @bottom;
     border-top: 1px solid #bfbfbf;
@@ -93,7 +144,7 @@ img {
             content: "";
             display: block;
             height: 30px;
-            margin: 3px 0 0;
+            margin: 4px 0 0;
         }
         &:nth-of-type(1):before {
             background: url(../images/index_01.png) center/contain no-repeat;
@@ -130,7 +181,7 @@ img {
         }
         span {
             position: absolute;
-            bottom: 5px;
+            bottom: 4px;
             left: 0;
             width: 100%;
             line-height: 1;

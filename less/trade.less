@@ -1,0 +1,79 @@
+@import url("./common.less");
+
+/* search 样式 */
+
+.height100();
+.top {
+    height:2*@top;
+    .line1 {
+        .topLess();
+    }
+    .line2{
+        background: #fff;
+        color:#1e1e1e;
+    }
+}
+.main{
+    .mainLess();
+    overflow:auto;
+    padding-top:2*@top;
+}
+
+.trade-list{
+    .trade-item{
+        margin:8px 0;
+        background: #fff;
+        .trade-item-top{
+            line-height: 2rem;
+            padding: 0 0.8rem;
+            .clearfix();
+            span{
+                float: left;
+                color:#4c4c4c;
+                font-weight: 700;
+                font-size:@minfont;
+                &:before{
+                    content:"上架时间："
+                }
+            }
+            strong{
+                float: right;
+                color:#d90000;
+                &:before{
+                    content:"￥";
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+        .trade-item-major{
+            padding: 0 0 12px;
+            .clearfix();
+            img{
+                float: left;
+                width: 3rem;
+                margin: 0.1rem 0 0 0.8rem;
+            }
+            div{
+                margin: 0 0 0 4.5rem;
+                p{
+                    line-height: 1.5;
+                    .elli();
+                    &:nth-of-type(1){
+                        color:#1e1e1e;
+                    }
+                    &:nth-of-type(2){
+                        color:#10ccac;
+                        font-size:0.7rem;
+                        &:before{
+                            content:"区服："
+                        }
+                    }
+                    &:nth-of-type(3){
+                        color:#acacac;
+                        font-size:0.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

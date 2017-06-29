@@ -1,4 +1,3 @@
-@import url("../plug/idangerous.swiper.css");
 /* 代替base.css作为清除默认样式less */
 * {
   margin: 0;
@@ -110,40 +109,43 @@ img {
   width: 100%;
   line-height: 1;
 }
-/* service 样式 */
+/* search 样式 */
 html {
   height: 100%;
 }
 html body {
   height: 100%;
-  background: #fff;
+  background: #eeeeee;
 }
 html body #wrap {
   height: 100%;
 }
 .top {
+  height: 90px;
+}
+.top .line1 {
   padding: 0 2px;
 }
-.top > a:nth-of-type(1) {
+.top .line1 > a:nth-of-type(1) {
   float: left;
   width: 45px;
   height: 45px;
   background: url(../images/download.png) center / 55% no-repeat;
 }
-.top > a:nth-of-type(2) {
+.top .line1 > a:nth-of-type(2) {
   float: right;
   width: 45px;
   height: 45px;
   background: url(../images/share.png) center / 50% no-repeat;
 }
-.top > div {
+.top .line1 > div {
   display: inline-block;
   margin: -3px 0 0;
   vertical-align: middle;
   background: #d86c00;
   border-radius: 5px;
 }
-.top > div a {
+.top .line1 > div a {
   float: left;
   width: 4.5rem;
   height: 23px;
@@ -151,100 +153,84 @@ html body #wrap {
   padding: 2px 0 0;
   border-radius: 5px;
 }
-.top > div a.active {
+.top .line1 > div a.active {
   background: #ffffff;
   color: #ff9123;
+}
+.top .line2 {
+  background: #fff;
+  color: #1e1e1e;
 }
 .main {
   box-sizing: border-box;
   height: 100%;
   padding: 45px 0 55px;
   overflow: auto;
+  padding-top: 90px;
 }
-.main .service-list {
-  padding: 10px 0 0;
+.trade-list .trade-item {
+  margin: 8px 0;
+  background: #fff;
 }
-.main .service-list .service-item {
-  margin: 20px 0;
+.trade-list .trade-item .trade-item-top {
+  line-height: 2rem;
+  padding: 0 0.8rem;
 }
-.main .service-list .service-item i {
-  display: inline-block;
-  padding: 7px 50px 5px 12px;
-  background: #60d8ff url(../images/service1.png) right center / contain no-repeat;
-  color: #fff;
-  font-style: normal;
-}
-.main .service-list .service-item section:after {
+.trade-list .trade-item .trade-item-top:after {
   content: '';
   display: block;
   clear: both;
 }
-.main .service-list .service-item section a {
+.trade-list .trade-item .trade-item-top span {
   float: left;
-  width: 41%;
-  margin: 15px 0 0 6%;
+  color: #4c4c4c;
+  font-weight: 700;
+  font-size: 0.6rem;
 }
-.main .service-list .service-item section a img {
+.trade-list .trade-item .trade-item-top span:before {
+  content: "上架时间：";
+}
+.trade-list .trade-item .trade-item-top strong {
+  float: right;
+  color: #d90000;
+}
+.trade-list .trade-item .trade-item-top strong:before {
+  content: "￥";
+  margin: 0 5px 0 0;
+}
+.trade-list .trade-item .trade-item-major {
+  padding: 0 0 12px;
+}
+.trade-list .trade-item .trade-item-major:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.trade-list .trade-item .trade-item-major img {
   float: left;
-  width: 3.2rem;
-  margin: 0 0 10px;
+  width: 3rem;
+  margin: 0.1rem 0 0 0.8rem;
 }
-.main .service-list .service-item section a div {
-  margin: 0 0 0 3.5rem;
-  color: #1e1e1e;
+.trade-list .trade-item .trade-item-major div {
+  margin: 0 0 0 4.5rem;
 }
-.main .service-list .service-item section a div p {
-  font-size: 0.8rem;
+.trade-list .trade-item .trade-item-major div p {
+  line-height: 1.5;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .service-list .service-item section a div p:nth-of-type(1) {
-  line-height: 2;
+.trade-list .trade-item .trade-item-major div p:nth-of-type(1) {
+  color: #1e1e1e;
 }
-.main .service-list .service-item section a div p:nth-of-type(2) {
-  line-height: 1.5;
-  margin: 0 0 10px;
-}
-.main .service-list .service-item section a div p:nth-of-type(2) span {
+.trade-list .trade-item .trade-item-major div p:nth-of-type(2) {
+  color: #10ccac;
   font-size: 0.7rem;
-  vertical-align: middle;
-  color: #10cdad;
 }
-.main .service-list .service-item section a div p:nth-of-type(2) span.discount {
-  position: relative;
-  display: inline-block;
-  line-height: 1;
-  padding: 3px 6px 2px 16px;
-  border-radius: 10px;
-  margin: -3px 0 0 5px;
-  vertical-align: middle;
-  font-size: 10px;
-  font-weight: 300;
-  color: #fff;
-  background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
+.trade-list .trade-item .trade-item-major div p:nth-of-type(2):before {
+  content: "区服：";
 }
-.main .service-list .service-item section a em {
-  display: block;
-  width: 90%;
-  line-height: 1.8;
-  border-radius: 50px;
+.trade-list .trade-item .trade-item-major div p:nth-of-type(3) {
+  color: #acacac;
   font-size: 0.7rem;
-  font-style: normal;
-  clear: both;
-  color: #f27900;
-  background: #ffefdf;
-  text-align: center;
-}
-.service-search {
-  position: fixed;
-  top: 65px;
-  right: 0;
-  z-index: 100;
-  line-height: 1.5rem;
-  padding: 2px 0.5rem 0 1.6rem;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  color: #5fd8ff;
-  background: #e1f8ff url(../images/search.png) left 0.4rem center / auto 60% no-repeat;
 }

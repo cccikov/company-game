@@ -1,10 +1,10 @@
 @import url("../plug/idangerous.swiper.css");
 @import url("./common.less");
-.list-item() {
+.listItemLess() {
     position: relative;
     display: block;
     padding: 4% 0;
-    margin: 12px 0;
+    margin: 4px 0;
     background: #fff;
     .clearfix();
     img {
@@ -17,13 +17,13 @@
         width: 58.25%;
         min-height: 3.75rem;
         h5 {
-            line-height:1.5;
-            margin:0 0 5px;
+            line-height: 1.5;
+            margin: 0 0 5px;
             font-size: 0.9rem;
             font-weight: bold;
             .elli();
-            .discount{
-                .discount();
+            .discount {
+                .discountLess();
             }
         }
         p {
@@ -39,7 +39,7 @@
             }
             span {
                 padding: 3px 0;
-                vertical-align:middle;
+                vertical-align: middle;
                 margin: 0 5px 0 0;
                 font-size: @minfont;
                 &.item-intro:nth-of-type(1):after {
@@ -69,60 +69,15 @@
 }
 
 
+/* index 样式 */
 
-html {
-    height: 100%;
-    body {
-        height: 100%;
-        #wrap {
-            height: 100%;
-        }
-    }
-}
-
+.height100();
 .top {
-    &>a:nth-of-type(1) {
-        float: left;
-        width: @top;
-        height: @top;
-        background: url(../images/download.png) center/55% no-repeat;
-    }
-    &>a:nth-of-type(2) {
-        float: right;
-        width: @top;
-        height: @top;
-        background: url(../images/share.png) center/50% no-repeat;
-    }
-    &>div {
-        display: inline-block;
-        line-height: 1;
-        margin: -3px 0 0;
-        vertical-align: middle;
-        background: #d86c00;
-        border-radius: 5px;
-        a {
-            width: 4.5rem;
-            height: 25px;
-            line-height: 25px;
-            border-radius: 5px;
-            &:nth-of-type(1) {
-                float: left;
-            }
-            &:nth-of-type(2) {
-                float: right;
-            }
-            &.active {
-                background: #ffffff;
-                color: @maincolor;
-            }
-        }
-    }
+    .topLess();
 }
 
 .main {
-    box-sizing: border-box;
-    height: 100%;
-    padding: @top 0 @bottom;
+    .mainLess();
     .content {
         height: 100%;
         overflow: auto;
@@ -182,7 +137,7 @@ html {
         // 活动
         .activity {
             .list-item {
-                .list-item();
+                .listItemLess();
             }
             .item-action {
                 // 15%
@@ -197,7 +152,7 @@ html {
         // 游戏列表
         .game {
             .list-item {
-                .list-item();
+                .listItemLess();
             }
             .item-action {
                 // 15%
