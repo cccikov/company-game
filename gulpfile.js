@@ -16,7 +16,7 @@ let css2miniPath = "css/min"; // 压缩后的css路径
 let browserSyncPath = ["themes/simplebootx/*.html","css/*.css","js/*.js"]; // 监视同步路径
 let browserSyncWithoutCssPath = ["themes/simplebootx/*.html","js/*.js"]; // 监视路径不要css
 let browserSyncRootPath = "./";
-let browserSyncIndex = "themes/simplebootx/index.html"; // 服务器启动的时候,默认打开的文件
+let browserSyncIndex = "enter.html"; // 服务器启动的时候,默认打开的文件
 
 function lessFn(path, base, destPath) { // 只有path是event.path的时候才可以忽略destPath
     return gulp.src(path, { base: base })
