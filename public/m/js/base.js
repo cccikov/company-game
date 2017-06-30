@@ -16,6 +16,7 @@ function PageSwiper(obj) {
     this.page = obj.page;
     var that = this;
     that.swiperObj = new Swiper(that.page, {
+        width:window.innerWidth,
         onSlideChangeEnd: function(swiper) {
             var _index = swiper.activeIndex;
             that.button.eq(_index).addClass("active").siblings('a').removeClass("active");
