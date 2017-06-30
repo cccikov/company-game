@@ -11,7 +11,6 @@ $(function() {
         loop: true, //可选选项，开启循环
         pagination: '.pagination',
         preloadImages: true,
-        width:window.innerWidth
     });
 
 });
