@@ -1,3 +1,4 @@
+@import url("../css/swiper.min.css");
 /* 代替base.css作为清除默认样式less */
 * {
   margin: 0;
@@ -121,31 +122,28 @@ html body #wrap {
   height: 100%;
 }
 .top {
-  height: 90px;
-}
-.top .line1 {
   padding: 0 2px;
 }
-.top .line1 > a:nth-of-type(1) {
+.top > a:nth-of-type(1) {
   float: left;
   width: 45px;
   height: 45px;
   background: url(../images/download.png) center / 55% no-repeat;
 }
-.top .line1 > a:nth-of-type(2) {
+.top > a:nth-of-type(2) {
   float: right;
   width: 45px;
   height: 45px;
   background: url(../images/share.png) center / 50% no-repeat;
 }
-.top .line1 > div {
+.top > div {
   display: inline-block;
   margin: -3px 0 0;
   vertical-align: middle;
   background: #d86c00;
   border-radius: 5px;
 }
-.top .line1 > div a {
+.top > div a {
   float: left;
   width: 4.5rem;
   height: 23px;
@@ -153,20 +151,36 @@ html body #wrap {
   padding: 2px 0 0;
   border-radius: 5px;
 }
-.top .line1 > div a.active {
+.top > div a.active {
   background: #ffffff;
   color: #ff9123;
-}
-.top .line2 {
-  background: #fff;
-  color: #1e1e1e;
 }
 .main {
   box-sizing: border-box;
   height: 100%;
   padding: 45px 0 55px;
+}
+.main .content-wrap {
+  height: 100%;
+}
+.main .content {
+  position: relative;
+  height: 100%;
+}
+.buy-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  line-height: 45px;
+  text-align: center;
+  background: #fff;
+}
+.trade-list {
   overflow: auto;
-  padding-top: 90px;
+  box-sizing: border-box;
+  padding: 45px 0 0;
+  height: 100%;
 }
 .trade-list .trade-item {
   margin: 8px 0;

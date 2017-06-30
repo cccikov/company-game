@@ -1,10 +1,10 @@
-@import url("../css/idangerous.swiper.css");
+@import url("../css/swiper.min.css");
 @import url("./common.less");
 .listItemLess() {
     position: relative;
     display: block;
     padding: 4% 0;
-    margin: 4px 0;
+    margin: 0 0 4px;
     background: #fff;
     .clearfix();
     img {
@@ -75,106 +75,142 @@
 .top {
     .topLess();
 }
-
 .main {
     .mainLess();
+    .content-wrap{
+        height:100%;
+    }
     .content {
         height: 100%;
         overflow: auto;
-        // 新游
-        .new {
-            padding: 0 0 1rem;
-            background: #fff;
-            .new-top {
-                .clearfix();
-                line-height: 2.5rem;
-                span {
-                    float: left;
-                    font-size: 1rem;
-                    color: @maincolor;
-                    padding: 0 5%;
-                }
-                a {
-                    float: right;
-                    font-size: 0.7rem;
-                    color: #00b285;
-                    padding: 0 1rem;
-                }
-            }
-            .new-list {
-                text-align: center;
-                .clearfix();
-                li {
-                    float: left;
-                    width: 18.75%;
-                    margin: 0 0 0 5%;
-                    p {
-                        font-size: 0.75rem;
-                        line-height: 1;
-                        margin: 0.45rem -0.2rem;
-                        .elli();
-                        &:nth-of-type(2) {
-                            font-size: @minfont;
-                            color: #73b9ff;
-                        }
-                    }
-                    a {
-                        display: inline-block;
-                        width: 100%;
-                        border: 1px solid @maincolor;
-                        border-radius: 1rem;
-                        font-size: 0.9rem;
-                        line-height: 1.8;
-                        color: @maincolor;
-                        &.active {
-                            color: #fff;
-                            background: @maincolor;
-                        }
-                    }
-                }
-            }
+    }
+}
+
+// 图片轮播
+.swiper-image{
+    position:relative;
+    .pagination{
+        position:absolute;
+        width:100%;
+        left:0;
+        bottom:5px;
+        z-index: 10;
+        text-align: center;
+        .swiper-pagination-bullet-active{
+            background: #fd0100;
         }
-        // 活动
-        .activity {
-            .list-item {
-                .listItemLess();
-            }
-            .item-action {
-                // 15%
-                position: absolute;
-                top: 50%;
-                right: 3.5%;
-                padding: 4.5%; // 相当于宽高都为父标签宽度的9%;
-                transform: translate(0, -50%);
-                background: url(../images/arrow.png) center/contain no-repeat;
-            }
+    }
+}
+
+// 新游
+.new {
+    padding: 0 0 1rem;
+    margin: 0 0 4px;
+    background: #fff;
+    .new-top {
+        .clearfix();
+        line-height: 2.5rem;
+        span {
+            float: left;
+            font-size: 1rem;
+            color: @maincolor;
+            padding: 0 5%;
         }
-        // 游戏列表
-        .game {
-            .list-item {
-                .listItemLess();
-            }
-            .item-action {
-                // 15%
-                position: absolute;
-                top: 50%;
-                right: 3%;
-                padding: 5%; // 相当于宽高都为父标签宽度的10%;
-                transform: translate(0, -50%);
-                background: #5bd7ff;
-                border-radius: 50%;
-                &:before {
-                    content: "下载";
-                    position: absolute;
-                    width: 100%;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    color: #fff;
+        a {
+            float: right;
+            font-size: 0.7rem;
+            color: #00b285;
+            padding: 0 1rem;
+        }
+    }
+    .new-list {
+        text-align: center;
+        .clearfix();
+        li {
+            float: left;
+            width: 18.75%;
+            margin: 0 0 0 5%;
+            p {
+                font-size: 0.75rem;
+                line-height: 1;
+                margin: 0.45rem -0.2rem;
+                .elli();
+                &:nth-of-type(2) {
                     font-size: @minfont;
-                    text-align: center;
+                    color: #73b9ff;
                 }
             }
+            a {
+                display: inline-block;
+                width: 100%;
+                border: 1px solid @maincolor;
+                border-radius: 1rem;
+                font-size: 0.9rem;
+                line-height: 1.8;
+                color: @maincolor;
+                &.active {
+                    color: #fff;
+                    background: @maincolor;
+                }
+            }
+        }
+    }
+}
+
+// 活动
+.activity {
+    .list-item {
+        .listItemLess();
+    }
+    .item-action {
+        // 15%
+        position: absolute;
+        top: 50%;
+        right: 3.5%;
+        padding: 4.5%; // 相当于宽高都为父标签宽度的9%;
+        transform: translate(0, -50%);
+        background: url(../images/arrow.png) center/contain no-repeat;
+    }
+}
+
+// 游戏列表
+.game {
+    .list-item {
+        .listItemLess();
+    }
+    .item-action {
+        // 15%
+        position: absolute;
+        top: 50%;
+        right: 3%;
+        padding: 5%; // 相当于宽高都为父标签宽度的10%;
+        transform: translate(0, -50%);
+        background: #5bd7ff;
+        border-radius: 50%;
+        &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: @minfont;
+            text-align: center;
+        }
+    }
+}
+.online{
+    .game{
+        .item-action:before{
+            content:"下载"
+        }
+    }
+}
+.web{
+    .game{
+        .item-action:before{
+            content:"开始"
         }
     }
 }

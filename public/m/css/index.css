@@ -1,4 +1,4 @@
-@import url("../css/idangerous.swiper.css");
+@import url("../css/swiper.min.css");
 /* 代替base.css作为清除默认样式less */
 * {
   margin: 0;
@@ -160,48 +160,66 @@ html body #wrap {
   height: 100%;
   padding: 45px 0 55px;
 }
+.main .content-wrap {
+  height: 100%;
+}
 .main .content {
   height: 100%;
   overflow: auto;
 }
-.main .content .new {
+.swiper-image {
+  position: relative;
+}
+.swiper-image .pagination {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 5px;
+  z-index: 10;
+  text-align: center;
+}
+.swiper-image .pagination .swiper-pagination-bullet-active {
+  background: #fd0100;
+}
+.new {
   padding: 0 0 1rem;
+  margin: 0 0 4px;
   background: #fff;
 }
-.main .content .new .new-top {
+.new .new-top {
   line-height: 2.5rem;
 }
-.main .content .new .new-top:after {
+.new .new-top:after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .new .new-top span {
+.new .new-top span {
   float: left;
   font-size: 1rem;
   color: #ff9123;
   padding: 0 5%;
 }
-.main .content .new .new-top a {
+.new .new-top a {
   float: right;
   font-size: 0.7rem;
   color: #00b285;
   padding: 0 1rem;
 }
-.main .content .new .new-list {
+.new .new-list {
   text-align: center;
 }
-.main .content .new .new-list:after {
+.new .new-list:after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .new .new-list li {
+.new .new-list li {
   float: left;
   width: 18.75%;
   margin: 0 0 0 5%;
 }
-.main .content .new .new-list li p {
+.new .new-list li p {
   font-size: 0.75rem;
   line-height: 1;
   margin: 0.45rem -0.2rem;
@@ -209,11 +227,11 @@ html body #wrap {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .content .new .new-list li p:nth-of-type(2) {
+.new .new-list li p:nth-of-type(2) {
   font-size: 0.6rem;
   color: #73b9ff;
 }
-.main .content .new .new-list li a {
+.new .new-list li a {
   display: inline-block;
   width: 100%;
   border: 1px solid #ff9123;
@@ -222,33 +240,33 @@ html body #wrap {
   line-height: 1.8;
   color: #ff9123;
 }
-.main .content .new .new-list li a.active {
+.new .new-list li a.active {
   color: #fff;
   background: #ff9123;
 }
-.main .content .activity .list-item {
+.activity .list-item {
   position: relative;
   display: block;
   padding: 4% 0;
-  margin: 4px 0;
+  margin: 0 0 4px;
   background: #fff;
 }
-.main .content .activity .list-item:after {
+.activity .list-item:after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .activity .list-item img {
+.activity .list-item img {
   float: left;
   width: 18.75%;
   margin: 0 3% 0 5%;
 }
-.main .content .activity .list-item .item-middle {
+.activity .list-item .item-middle {
   float: left;
   width: 58.25%;
   min-height: 3.75rem;
 }
-.main .content .activity .list-item .item-middle h5 {
+.activity .list-item .item-middle h5 {
   line-height: 1.5;
   margin: 0 0 5px;
   font-size: 0.9rem;
@@ -257,7 +275,7 @@ html body #wrap {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .content .activity .list-item .item-middle h5 .discount {
+.activity .list-item .item-middle h5 .discount {
   position: relative;
   display: inline-block;
   line-height: 1;
@@ -270,31 +288,31 @@ html body #wrap {
   color: #fff;
   background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
 }
-.main .content .activity .list-item .item-middle p {
+.activity .list-item .item-middle p {
   color: #707070;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .content .activity .list-item .item-middle p:nth-of-type(1) {
+.activity .list-item .item-middle p:nth-of-type(1) {
   margin: 0 0 3%;
   font-size: 0;
 }
-.main .content .activity .list-item .item-middle p:nth-of-type(1):after {
+.activity .list-item .item-middle p:nth-of-type(1):after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .activity .list-item .item-middle p:nth-of-type(2) {
+.activity .list-item .item-middle p:nth-of-type(2) {
   font-size: 0.75rem;
 }
-.main .content .activity .list-item .item-middle p span {
+.activity .list-item .item-middle p span {
   padding: 3px 0;
   vertical-align: middle;
   margin: 0 5px 0 0;
   font-size: 0.6rem;
 }
-.main .content .activity .list-item .item-middle p span.item-intro:nth-of-type(1):after {
+.activity .list-item .item-middle p span.item-intro:nth-of-type(1):after {
   content: "";
   display: inline-block;
   height: 0.6rem;
@@ -302,20 +320,20 @@ html body #wrap {
   margin: -3px 0 0 5px;
   vertical-align: middle;
 }
-.main .content .activity .list-item .item-middle .item-label {
+.activity .list-item .item-middle .item-label {
   display: inline-block;
   padding: 3px;
   color: #fff;
   font-size: 10px;
   background: #ff9123;
 }
-.main .content .activity .list-item .item-middle .item-label.blue {
+.activity .list-item .item-middle .item-label.blue {
   background: #24c9ff;
 }
-.main .content .activity .list-item .item-middle .item-label.green {
+.activity .list-item .item-middle .item-label.green {
   background: #00b285;
 }
-.main .content .activity .item-action {
+.activity .item-action {
   position: absolute;
   top: 50%;
   right: 3.5%;
@@ -323,29 +341,29 @@ html body #wrap {
   transform: translate(0, -50%);
   background: url(../images/arrow.png) center / contain no-repeat;
 }
-.main .content .game .list-item {
+.game .list-item {
   position: relative;
   display: block;
   padding: 4% 0;
-  margin: 4px 0;
+  margin: 0 0 4px;
   background: #fff;
 }
-.main .content .game .list-item:after {
+.game .list-item:after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .game .list-item img {
+.game .list-item img {
   float: left;
   width: 18.75%;
   margin: 0 3% 0 5%;
 }
-.main .content .game .list-item .item-middle {
+.game .list-item .item-middle {
   float: left;
   width: 58.25%;
   min-height: 3.75rem;
 }
-.main .content .game .list-item .item-middle h5 {
+.game .list-item .item-middle h5 {
   line-height: 1.5;
   margin: 0 0 5px;
   font-size: 0.9rem;
@@ -354,7 +372,7 @@ html body #wrap {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .content .game .list-item .item-middle h5 .discount {
+.game .list-item .item-middle h5 .discount {
   position: relative;
   display: inline-block;
   line-height: 1;
@@ -367,31 +385,31 @@ html body #wrap {
   color: #fff;
   background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
 }
-.main .content .game .list-item .item-middle p {
+.game .list-item .item-middle p {
   color: #707070;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.main .content .game .list-item .item-middle p:nth-of-type(1) {
+.game .list-item .item-middle p:nth-of-type(1) {
   margin: 0 0 3%;
   font-size: 0;
 }
-.main .content .game .list-item .item-middle p:nth-of-type(1):after {
+.game .list-item .item-middle p:nth-of-type(1):after {
   content: '';
   display: block;
   clear: both;
 }
-.main .content .game .list-item .item-middle p:nth-of-type(2) {
+.game .list-item .item-middle p:nth-of-type(2) {
   font-size: 0.75rem;
 }
-.main .content .game .list-item .item-middle p span {
+.game .list-item .item-middle p span {
   padding: 3px 0;
   vertical-align: middle;
   margin: 0 5px 0 0;
   font-size: 0.6rem;
 }
-.main .content .game .list-item .item-middle p span.item-intro:nth-of-type(1):after {
+.game .list-item .item-middle p span.item-intro:nth-of-type(1):after {
   content: "";
   display: inline-block;
   height: 0.6rem;
@@ -399,20 +417,20 @@ html body #wrap {
   margin: -3px 0 0 5px;
   vertical-align: middle;
 }
-.main .content .game .list-item .item-middle .item-label {
+.game .list-item .item-middle .item-label {
   display: inline-block;
   padding: 3px;
   color: #fff;
   font-size: 10px;
   background: #ff9123;
 }
-.main .content .game .list-item .item-middle .item-label.blue {
+.game .list-item .item-middle .item-label.blue {
   background: #24c9ff;
 }
-.main .content .game .list-item .item-middle .item-label.green {
+.game .list-item .item-middle .item-label.green {
   background: #00b285;
 }
-.main .content .game .item-action {
+.game .item-action {
   position: absolute;
   top: 50%;
   right: 3%;
@@ -421,8 +439,8 @@ html body #wrap {
   background: #5bd7ff;
   border-radius: 50%;
 }
-.main .content .game .item-action:before {
-  content: "下载";
+.game .item-action:before {
+  content: "";
   position: absolute;
   width: 100%;
   top: 50%;
@@ -431,4 +449,10 @@ html body #wrap {
   color: #fff;
   font-size: 0.6rem;
   text-align: center;
+}
+.online .game .item-action:before {
+  content: "下载";
+}
+.web .game .item-action:before {
+  content: "开始";
 }

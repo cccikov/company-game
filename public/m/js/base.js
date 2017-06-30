@@ -9,3 +9,22 @@ var rem = baseFontSize();
 window.addEventListener("resize", function() {
     rem = baseFontSize();
 }, false);
+
+
+function PageSwiper(obj) {
+    this.button = $(obj.button);
+    this.page = obj.page;
+    var that = this;
+    that.swiperObj = new Swiper(that.page, {
+        onSlideChangeEnd: function(swiper) {
+            var _index = swiper.activeIndex;
+            that.button.eq(_index).addClass("active").siblings('a').removeClass("active");
+        }
+    });
+    this.button.on("click", function() {
+        var that = $(this);
+        var _index = that.addClass('active').index();
+        that.siblings("a").removeClass("active");
+        mySwiper.slideTo(_index);
+    });
+}

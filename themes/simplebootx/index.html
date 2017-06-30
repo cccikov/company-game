@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>游戏</title>
+    <script type="text/javascript" src="/public/m/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="/public/m/js/base.js"></script>
-    <script type="text/javascript" src="/public/m/js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="/public/m/js/swiper.jquery.min.js"></script>
+    <script type="text/javascript" src="/public/m/js/index.js"></script>
     <link rel="stylesheet" type="text/css" href="/public/m/css/index.css">
 </head>
 
@@ -28,185 +30,328 @@
 
 
         <!-- main begin -->
-        <div class="main">
-            <div class="content">
-
-                <!-- swiper(轮播) begin -->
-                <div class="swiper">
-                    <img src="/public/m/images/test/test_01.png">
-                </div>
-                <!-- swiper end -->
+        <div class="main swiper-container">
+            <div class="content-wrap swiper-wrapper">
 
 
-                <!-- new(新游戏预约) begin -->
-                <div class="new">
-                    <div class="new-top">
-                        <span>新游预约</span>
-                        <a href="javascript:void(0)">查看更多</a>
+                <!--******************** 网游 ********************-->
+                <!--******************** 网游 ********************-->
+                <!--******************** 网游 ********************-->
+                <!-- content begin -->
+                <div class="content online swiper-slide">
+
+                    <!-- swiper(轮播) begin -->
+                    <div class="swiper-container swiper-image">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/public/m/images/test/test_01.png"></div>
+                            <div class="swiper-slide"><img src="/public/m/images/test/test_01.png"></div>
+                            <div class="swiper-slide"><img src="/public/m/images/test/test_01.png"></div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="pagination"></div>
                     </div>
-                    <ul class="new-list">
-                        <li>
+                    <!-- swiper end -->
+
+
+                    <!-- new(新游戏预约) begin -->
+                    <div class="new">
+                        <div class="new-top">
+                            <span>新游预约</span>
+                            <a href="javascript:void(0)">查看更多</a>
+                        </div>
+                        <ul class="new-list">
+                            <li>
+                                <img src="/public/m/images/test/test_02.png">
+                                <p>我叫MT英雄MT英雄</p>
+                                <p>12-22 首发</p>
+                                <a class="active" href="javascript:void(0)">已预约</a>
+                            </li>
+                            <li>
+                                <img src="/public/m/images/test/test_02.png">
+                                <p>口袋怪物么么哒</p>
+                                <p>6-22 首发</p>
+                                <a href="javascript:void(0)">预约</a>
+                            </li>
+                            <li>
+                                <img src="/public/m/images/test/test_02.png">
+                                <p>我叫MT英雄</p>
+                                <p>6-22 首发</p>
+                                <a href="javascript:void(0)">预约</a>
+                            </li>
+                            <li>
+                                <img src="/public/m/images/test/test_02.png">
+                                <p>我叫MT英雄</p>
+                                <p>6-22 首发</p>
+                                <a href="javascript:void(0)">预约</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- new end -->
+
+
+                    <!-- activity(活动) begin -->
+                    <ul class="activity">
+                        <li class="list-item" data-href="http://www.baidu.com">
                             <img src="/public/m/images/test/test_02.png">
-                            <p>我叫MT英雄MT英雄</p>
-                            <p>12-22 首发</p>
-                            <a class="active" href="javascript:void(0)">已预约</a>
-                        </li>
-                        <li>
-                            <img src="/public/m/images/test/test_02.png">
-                            <p>口袋怪物么么哒</p>
-                            <p>6-22 首发</p>
-                            <a href="javascript:void(0)">预约</a>
-                        </li>
-                        <li>
-                            <img src="/public/m/images/test/test_02.png">
-                            <p>我叫MT英雄</p>
-                            <p>6-22 首发</p>
-                            <a href="javascript:void(0)">预约</a>
-                        </li>
-                        <li>
-                            <img src="/public/m/images/test/test_02.png">
-                            <p>我叫MT英雄</p>
-                            <p>6-22 首发</p>
-                            <a href="javascript:void(0)">预约</a>
+                            <div class="item-middle">
+                                <h5>父亲节特辑夏至未至</h5>
+                                <p>
+                                    <span class="item-label blue">游戏合辑</span>
+                                </p>
+                                <p>父亲节特别奉献 , 适合各种小爸爸游戏</p>
+                            </div>
+                            <a class="item-action"></a>
                         </li>
                     </ul>
+                    <!-- activity end -->
+
+
+                    <!-- game 游戏列表 begin -->
+                    <ul class="game">
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣</h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
+                        </li>
+                    </ul>
+                    <!-- game end -->
                 </div>
-                <!-- new end -->
+                <!-- content end -->
 
 
-                <!-- activity(活动) begin -->
-                <ul class="activity">
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>父亲节特辑夏至未至</h5>
-                            <p>
-                                <span class="item-label blue">游戏合辑</span>
-                            </p>
-                            <p>父亲节特别奉献 , 适合各种小爸爸游戏</p>
-                        </div>
-                        <a class="item-action"></a>
-                    </li>
-                </ul>
-                <!-- activity end -->
 
 
-                <!-- game 游戏列表 begin -->
-                <ul class="game">
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣<span class="discount">4.8折</span></h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                    <li class="list-item" data-href="http://www.baidu.com">
-                        <img src="/public/m/images/test/test_02.png">
-                        <div class="item-middle">
-                            <h5>龙泣</h5>
-                            <p>
-                                <span class="item-intro">107.9MB</span>
-                                <span class="item-intro">角色</span>
-                                <span class="item-label ori">20日首发</span>
-                                <span class="item-label green">独家活动</span>
-                            </p>
-                            <p>传承传奇经典 , 回味当年激情</p>
-                        </div>
-                        <a class="item-action" href="/public/m/images/arrow.png" download=""></a>
-                    </li>
-                </ul>
-                <!-- game end -->
+                <!--******************** h5游戏 ********************-->
+                <!--******************** h5游戏 ********************-->
+                <!--******************** h5游戏 ********************-->
+                <!-- content begin -->
+                <div class="content web swiper-slide">
+                    <!-- game 游戏列表 begin -->
+                    <ul class="game">
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+                        <li class="list-item" data-href="http://www.baidu.com">
+                            <img src="/public/m/images/test/test_02.png">
+                            <div class="item-middle">
+                                <h5>龙泣<span class="discount">4.8折</span></h5>
+                                <p>
+                                    <span class="item-intro">107.9MB</span>
+                                    <span class="item-intro">角色</span>
+                                    <span class="item-label ori">20日首发</span>
+                                    <span class="item-label green">独家活动</span>
+                                </p>
+                                <p>传承传奇经典 , 回味当年激情</p>
+                            </div>
+                            <a class="item-action" href="javascript:void(0)"></a>
+                        </li>
+
+                    </ul>
+                    <!-- game end -->
+                </div>
+                <!-- content end -->
 
             </div>
         </div>
