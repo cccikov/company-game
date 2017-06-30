@@ -14,17 +14,17 @@ window.addEventListener("resize", function() {
 function PageSwiper(obj) {
     this.button = $(obj.button);
     this.page = obj.page;
-    var that = this;
-    that.swiperObj = new Swiper(that.page, {
+    var _this = this;
+    _this.swiperObj = new Swiper(_this.page, {
         onSlideChangeEnd: function(swiper) {
             var _index = swiper.activeIndex;
-            that.button.eq(_index).addClass("active").siblings('a').removeClass("active");
+            _this.button.eq(_index).addClass("active").siblings('a').removeClass("active");
         }
     });
     this.button.on("click", function() {
-        var that = $(this);
-        var _index = that.addClass('active').index();
-        that.siblings("a").removeClass("active");
+        var _this = $(this);
+        var _index = _this.addClass('active').index();
+        _this.siblings("a").removeClass("active");
         mySwiper.slideTo(_index);
     });
 }
