@@ -13,4 +13,23 @@ $(function() {
         preloadImages: true,
     });
 
+    var indexScroll = new Scroll();
+    indexScroll.onscroll = function(e,tar){
+        var _this = this;
+        var that = tar;
+        // console.log(_this,tar);
+    }
+
 });
+
+
+function Scroll(obj){
+    var _this = this;
+    _this.scroller = $(".online");
+     _this.scroller.on("scroll",function(e){
+        _this.onscroll(e, $(this));
+     });
+}
+Scroll.prototype.onscroll = function(event,tar){
+    var _this = this;
+};
