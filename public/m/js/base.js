@@ -42,7 +42,46 @@ function PageSwiper(obj) {
 
 /**
  * 滑动到底刷新
+ * @param {object} obj 一个包含两个属性的对象
+ *
+ * obj.scroller 滚动条条jq对象
+ * obj.bottom 滚动条里面最底的元素(用于判断是否到底)
  */
+function Scroll(obj) {
+    var _this = this;
+    _this.scroller = obj.scroller; // 滚动条条对象
+    _this.bottom = obj.bottom; // 滚动条里面最底的元素
+    _this.canGet = true; // 用来标记是否会执行onscroll函数 , 避免多次加载数据
+    _this.scroller.on("scroll", function(e) {
+        _this.onscroll(e, $(this));
+        // _this._onscroll(e, $(this));
+    });
+}
+Scroll.prototype.onscroll = function(event, tar) {
+    var _this = this;
+    var that = tar;
+    // console.log(_this,tar,event);
+    var clientH = _this.scroller.height();
+    var jqOffsetT = _this.bottom.offset().top;
+    if (jqOffsetT < clientH) {
+        _this.canGet && _this.getData(tar);
+    }
+}
+Scroll.prototype.getData = function(tar) {
+    var _this = this;
+    console.log("到底");
+}
+/*Scroll.prototype._onscroll = function(event, tar) { // 原生判断是否到底
+    var _this = this;
+    var that = tar;
+    // console.log(_this,tar,event);
+    var clientH = _this.scroller.height();
+    var scrollt = _this.scroller[0].scrollTop;
+    var offsetT = _this.bottom[0].offsetTop;
+    if (scrollt + clientH > offsetT) {
+        _this.canGet && _this.getData(tar);
+    }
+}*/
 
 
 /**
@@ -52,21 +91,20 @@ function PageSwiper(obj) {
  * 注意 该textarea的border-top border-bottom必须是1px
  *      必须已经设置box-sizing:border-box
  */
- function AutoHeightTextarea(dom){
-     var _this = this;
-     _this.dom = dom;
-     _this.dom.addEventListener("input", fn(_this.dom), false);
- }
- AutoHeightTextarea.prototype._fn = function(dom){
-     var originHeight = dom.offsetHeight;
-     return function(e) {
-         // console.log(e, this);
-         this.style.height = originHeight + "px"
-         var offsetHeight = this.offsetHeight
-         var scrollHeight = this.scrollHeight + 2
-         if (scrollHeight > offsetHeight) {
-             this.style.height = scrollHeight + "px";
-         }
-     }
- }
-
+function AutoHeightTextarea(dom) {
+    var _this = this;
+    _this.dom = dom;
+    _this.dom.addEventListener("input", _this._fn(_this.dom), false);
+}
+AutoHeightTextarea.prototype._fn = function(dom) {
+    var originHeight = dom.offsetHeight;
+    return function(e) {
+        // console.log(e, this);
+        this.style.height = originHeight + "px"
+        var offsetHeight = this.offsetHeight
+        var scrollHeight = this.scrollHeight + 2
+        if (scrollHeight > offsetHeight) {
+            this.style.height = scrollHeight + "px";
+        }
+    }
+}

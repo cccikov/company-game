@@ -459,6 +459,19 @@ html body #wrap {
   font-size: 0.6rem;
   text-align: center;
 }
+.game .load-msg {
+  padding: 4% 0;
+  margin: 0 0 0;
+  background: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+.game .load-msg:before {
+  content: "加载中...";
+}
+.game .load-msg.allLoad:before {
+  content: "全部加载完毕";
+}
 .online .game .item-action:before {
   content: "下载";
 }

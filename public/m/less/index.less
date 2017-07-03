@@ -198,6 +198,21 @@
             text-align: center;
         }
     }
+    .load-msg{
+        padding: 4% 0;
+        margin: 0 0 0;
+        background: #fff;
+        text-align: center;
+        font-size:12px;
+        &:before{
+            content:"加载中..."
+        }
+        &.allLoad{
+            &:before{
+                content:"全部加载完毕"
+            }
+        }
+    }
 }
 .online{
     .game{
