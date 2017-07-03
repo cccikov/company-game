@@ -42,6 +42,16 @@ img {
   text-align: center;
   font-size: 14px;
 }
+.top a.back {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  background: rgba(0, 0, 0, 0.2) url(../images/left.png) left 6px center / 56% no-repeat;
+}
 /* 底部导航共用 */
 .bottom {
   box-sizing: border-box;
@@ -52,7 +62,7 @@ img {
   width: 100%;
   height: 55px;
   border-top: 1px solid #bfbfbf;
-  background: #eeeeee;
+  background: #f0f0f0;
   text-align: center;
   font-size: 12px;
 }
@@ -187,7 +197,8 @@ html body {
   margin: 0 auto;
   background: #fff;
 }
-.me-function > p {
+.me-function .wallet {
+  display: block;
   line-height: 2rem;
   padding: 0 1.5rem;
   text-align: right;
@@ -195,14 +206,14 @@ html body {
   overflow: hidden;
   font-weight: 700;
 }
-.me-function > p:before {
+.me-function .wallet:before {
   content: "";
   float: left;
   height: 2rem;
   width: 1.5rem;
   background: url(../images/purse.png) center / contain no-repeat;
 }
-.me-function > p:after {
+.me-function .wallet:after {
   content: "钱包";
   float: left;
   margin: 0 0 0 6px;

@@ -13,8 +13,8 @@ let less2cssPath = "public/m/css/"; // less装换css后存放路径
 let cssPath = "public/m/css/*.css"; // 需要压缩的css路径
 let css2miniPath = "public/m/css/min"; // 压缩后的css路径
 
-let browserSyncPath = ["themes/simplebootx/*.html","public/m/css/*.css","public/m/js/*.js"]; // 监视同步路径
-let browserSyncWithoutCssPath = ["themes/simplebootx/*.html","public/m/js/*.js"]; // 监视路径不要css
+let browserSyncPath = ["themes/simplebootx/**/*.html","public/m/css/*.css","public/m/js/*.js"]; // 监视同步路径
+let browserSyncWithoutCssPath = ["themes/simplebootx/**/*.html","public/m/js/*.js"]; // 监视路径不要css
 let browserSyncRootPath = "./";
 let browserSyncIndex = "enter.html"; // 服务器启动的时候,默认打开的文件
 

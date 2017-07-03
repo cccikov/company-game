@@ -4,37 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>用户登录</title>
+    <title>反馈</title>
     <link rel="stylesheet" type="text/css" href="/public/m/css/login.css">
     <script type="text/javascript" src="/public/m/js/base.js"></script>
+    <script type="text/javascript">
+    window.onload = function() {
+        var textarea = document.querySelector('textarea');
+        var autoHei = new AutoHeightTextarea(textarea);
+    }
+    </script>
 </head>
 
 <body>
-    <div id="wrap">
+    <!-- 反馈 feedback -->
+    <div class="me_mp" id="wrap">
         <!-- top begin-->
         <div class="top">
-            <span>用户登录</span>
+            <span>反馈</span>
+            <a class="back" href="javascript:history.go(-1);"></a>
         </div>
         <!-- top end -->
         <!-- main begin -->
         <div class="main">
             <form method="post" action="">
                 <label>
-                    <input type="text" name="" placeholder="请输入用户名或者手机号">
+                    <textarea></textarea>
                 </label>
-                <label>
-                    <input type="password" name="" placeholder="请输入密码">
-                </label>
-                <button>登录</button>
+                <button>修改登陆密码</button>
             </form>
-            <div class="login-action">
-                <p>
-                    <a href="regsiter.html">注册</a>
-                </p>
-                <p>
-                    <a href="forget.html">忘记密码</a>
-                </p>
-            </div>
         </div>
         <!-- main end -->
     </div>

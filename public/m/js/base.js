@@ -44,3 +44,29 @@ function PageSwiper(obj) {
  * 滑动到底刷新
  */
 
+
+/**
+ * textarea自适应高度
+ * @param {原生dom} dom 需要自适应高度的textarea原生dom对象
+ *
+ * 注意 该textarea的border-top border-bottom必须是1px
+ *      必须已经设置box-sizing:border-box
+ */
+ function AutoHeightTextarea(dom){
+     var _this = this;
+     _this.dom = dom;
+     _this.dom.addEventListener("input", fn(_this.dom), false);
+ }
+ AutoHeightTextarea.prototype._fn = function(dom){
+     var originHeight = dom.offsetHeight;
+     return function(e) {
+         // console.log(e, this);
+         this.style.height = originHeight + "px"
+         var offsetHeight = this.offsetHeight
+         var scrollHeight = this.scrollHeight + 2
+         if (scrollHeight > offsetHeight) {
+             this.style.height = scrollHeight + "px";
+         }
+     }
+ }
+
