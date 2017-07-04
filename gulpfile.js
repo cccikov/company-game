@@ -13,7 +13,7 @@ let lessBasePath = "web/less/"; // 这里需要设置base为lessPath的glob前�
 let lessPath = lessBasePath + "**/*.less"; // 需要装换less路径
 let less2cssPath = "web/css/"; // less装换css后存放路径
 let cssPath = "web/css/*.css"; // 需要压缩的css路径
-let css2miniPath = "web/css/min"; // 压缩后的css路径
+let css2miniPath = "web/css"; // 压缩后的css路径
 
 let browserSyncPath = ["web/**/*.html","web/css/*.css","web/js/*.js"]; // 监视同步路径
 let browserSyncWithoutCssPath = ["web/**/*.html","web/js/*.js"]; // 监视路径不要css
@@ -98,7 +98,7 @@ gulp.task("koala", function() {
 gulp.task("minicss", function() {
     gulp.src(cssPath)
         .pipe(minicss())
-        .pipe(rename({ suffix: '.min' }))
+        // .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(css2miniPath));
 });
 
