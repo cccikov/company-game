@@ -4,23 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>反馈</title>
-    <link rel="stylesheet" type="text/css" href="/public/m/css/login.css">
-    <script type="text/javascript" src="/public/m/js/base.js"></script>
-    <script type="text/javascript">
-    window.onload = function() {
-        var textarea = document.querySelector('textarea');
-        var autoHei = new AutoHeightTextarea(textarea);
-    }
-    </script>
+    <title>支付密码</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <script type="text/javascript" src="./js/base.js"></script>
 </head>
 
 <body>
-    <!-- 反馈 feedback -->
+    <!-- 支付密码 Payment-password -->
     <div class="me_mp" id="wrap">
         <!-- top begin-->
         <div class="top">
-            <span>反馈</span>
+            <span>设置支付密码</span>
             <a class="back" href="javascript:history.go(-1);"></a>
         </div>
         <!-- top end -->
@@ -28,10 +22,13 @@
         <div class="main">
             <form method="post" action="">
                 <label>
-                    <textarea></textarea>
+                    <input type="password" name="" placeholder="请输入6-11位支付密码">
                 </label>
-                <button>修改登陆密码</button>
+                <button>设置支付密码</button>
             </form>
+            <div class="signup-action">
+                <a href="../forget.html">忘记登陆密码</a>
+            </div>
         </div>
         <!-- main end -->
     </div>

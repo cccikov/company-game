@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>支付密码</title>
-    <link rel="stylesheet" type="text/css" href="/public/m/css/login.css">
-    <script type="text/javascript" src="/public/m/js/base.js"></script>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <script type="text/javascript" src="./js/base.js"></script>
 </head>
 
 <body>
-    <!-- 支付密码 Payment-password -->
-    <div class="me_mp" id="wrap">
+    <div id="wrap">
         <!-- top begin-->
         <div class="top">
-            <span>设置支付密码</span>
+            <span>注册</span>
             <a class="back" href="javascript:history.go(-1);"></a>
         </div>
         <!-- top end -->
@@ -22,12 +21,16 @@
         <div class="main">
             <form method="post" action="">
                 <label>
-                    <input type="password" name="" placeholder="请输入6-11位支付密码">
+                    <input type="tel" name="" placeholder="请输入11位手机号">
                 </label>
-                <button>设置支付密码</button>
+                <label class="get">
+                    <input type="text" name="" placeholder="请输入验证码">
+                    <a href="javascript:void(0)">获取验证码</a>
+                </label>
+                <button>下一步</button>
             </form>
             <div class="signup-action">
-                <a href="../forget.html">忘记登陆密码</a>
+                <a href="regsiter2.html">用户名注册</a>
             </div>
         </div>
         <!-- main end -->
