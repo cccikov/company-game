@@ -2,9 +2,11 @@ let gulp = require('gulp');
 let less = require('gulp-less'); //
 let minicss = require("gulp-clean-css");
 let rename = require("gulp-rename");
+let imagemin = require('gulp-imagemin');
+let pngquant = require('imagemin-pngquant');
+let cache = require("gulp-cache");
 let browserSync = require('browser-sync').create();
 let reload = browserSync.reload;
-
 
 // 文件路径
 let lessBasePath = "web/less/"; // 这里需要设置base为lessPath的glob前面字符串 , 就算是"只转换修改的less文件方式"也不怕写入路径有问题了.但是这样如果lessPath是一个数组的时候就不行了 , 所以还是要搞一个任务,是装换后css就放在源less的所在文件夹
@@ -16,7 +18,7 @@ let css2miniPath = "web/css/min"; // 压缩后的css路径
 let browserSyncPath = ["web/**/*.html","web/css/*.css","web/js/*.js"]; // 监视同步路径
 let browserSyncWithoutCssPath = ["web/**/*.html","web/js/*.js"]; // 监视路径不要css
 let browserSyncRootPath = "./";
-let browserSyncIndex = "enter.html"; // 服务器启动的时候,默认打开的文件
+let browserSyncIndex = "index.html"; // 服务器启动的时候,默认打开的文件
 
 function lessFn(path, base, destPath) { // 只有path是event.path的时候才可以忽略destPath
     return gulp.src(path, { base: base })
@@ -201,4 +203,16 @@ gulp.task('syncKoala', function() {
 });
 
 
+/**
+ * 压缩图片
+ */
+gulp.task('imgmin', function () {
+    gulp.src('web/images/**/*.{png,jpg,gif,ico}')
+        .pipe(cache(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        })))
+        .pipe(gulp.dest('web/img'));
+});
 

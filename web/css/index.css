@@ -50,7 +50,7 @@ img {
   height: 29px;
   border-radius: 50%;
   transform: translate(0, -50%);
-  background: rgba(0, 0, 0, 0.2) url(../images/left.png) left 6px center / 56% no-repeat;
+  background: rgba(0, 0, 0, 0.2) url(../img/left.png) left 6px center / 56% no-repeat;
 }
 /* 底部导航共用 */
 .bottom {
@@ -80,37 +80,37 @@ img {
   margin: 4px 0 0;
 }
 .bottom a:nth-of-type(1):before {
-  background: url(../images/index_01.png) center / contain no-repeat;
+  background: url(../img/index_01.png) center / contain no-repeat;
 }
 .bottom a:nth-of-type(2):before {
-  background: url(../images/index_02.png) center / contain no-repeat;
+  background: url(../img/index_02.png) center / contain no-repeat;
 }
 .bottom a:nth-of-type(3):before {
-  background: url(../images/index_03.png) center / contain no-repeat;
+  background: url(../img/index_03.png) center / contain no-repeat;
 }
 .bottom a:nth-of-type(4):before {
-  background: url(../images/index_04.png) center / contain no-repeat;
+  background: url(../img/index_04.png) center / contain no-repeat;
 }
 .bottom a:nth-of-type(5):before {
-  background: url(../images/index_05.png) center / contain no-repeat;
+  background: url(../img/index_05.png) center / contain no-repeat;
 }
 .bottom a.active {
   color: #ff9123;
 }
 .bottom a.active:nth-of-type(1):before {
-  background: url(../images/index_c01.png) center / contain no-repeat;
+  background: url(../img/index_c01.png) center / contain no-repeat;
 }
 .bottom a.active:nth-of-type(2):before {
-  background: url(../images/index_c02.png) center / contain no-repeat;
+  background: url(../img/index_c02.png) center / contain no-repeat;
 }
 .bottom a.active:nth-of-type(3):before {
-  background: url(../images/index_c03.png) center / contain no-repeat;
+  background: url(../img/index_c03.png) center / contain no-repeat;
 }
 .bottom a.active:nth-of-type(4):before {
-  background: url(../images/index_c04.png) center / contain no-repeat;
+  background: url(../img/index_c04.png) center / contain no-repeat;
 }
 .bottom a.active:nth-of-type(5):before {
-  background: url(../images/index_c05.png) center / contain no-repeat;
+  background: url(../img/index_c05.png) center / contain no-repeat;
 }
 .bottom a span {
   position: absolute;
@@ -140,13 +140,13 @@ html body #wrap {
   float: left;
   width: 45px;
   height: 45px;
-  background: url(../images/download.png) center / 55% no-repeat;
+  background: url(../img/download.png) center / 55% no-repeat;
 }
 .top > a:nth-of-type(2) {
   float: right;
   width: 45px;
   height: 45px;
-  background: url(../images/share.png) center / 50% no-repeat;
+  background: url(../img/share.png) center / 50% no-repeat;
 }
 .top > div {
   display: inline-block;
@@ -304,7 +304,7 @@ html body #wrap {
   font-size: 10px;
   font-weight: 300;
   color: #fff;
-  background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
+  background: #e2213e url(../img/point.png) left 5px center / 7px no-repeat;
 }
 .activity .list-item .item-middle p {
   color: #707070;
@@ -357,7 +357,7 @@ html body #wrap {
   right: 3.5%;
   padding: 4.5%;
   transform: translate(0, -50%);
-  background: url(../images/arrow.png) center / contain no-repeat;
+  background: url(../img/arrow.png) center / contain no-repeat;
 }
 .game .list-item {
   position: relative;
@@ -407,7 +407,7 @@ html body #wrap {
   font-size: 10px;
   font-weight: 300;
   color: #fff;
-  background: #e2213e url(../images/point.png) left 5px center / 7px no-repeat;
+  background: #e2213e url(../img/point.png) left 5px center / 7px no-repeat;
 }
 .game .list-item .item-middle p {
   color: #707070;
