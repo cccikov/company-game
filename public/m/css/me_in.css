@@ -119,6 +119,9 @@ img {
   width: 100%;
   line-height: 1;
 }
+.temple {
+  display: none;
+}
 .main {
   padding: 45px 0 0;
 }

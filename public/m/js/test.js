@@ -1,50 +1,53 @@
 testData1 = [{
-    "a": "a",
-    "b": "b",
-    "c": "c",
-    "d": "d",
-    "download": "/public/m/images/arrow.png",
-    "exclusive": true,
-    "discount": 4.8
-}, {
-    "a": "a",
-    "b": "135MB",
+    "a": "我是游戏名",
+    "b": "50MB",
     "c": "即时",
-    "d": "d",
-    "download": "/public/m/images/arrow.png",
-    "first": "30日",
+    "d": "Lorem ipsum dolor.",
+    "url":"http://www.baidu.com",
+    "imgurl":"/public/m/images/test/test_02.png",
+    "downloadUrl": "/public/m/images/arrow.png",
+    "exclusive": true,
+    "discount": 4.8,
+    "first":"5日首发"
+}, {
+    "a": "我是游戏名",
+    "b": "50MB",
+    "c": "即时",
+    "d": "Lorem ipsum dolor.",
+    "url":"http://www.baidu.com",
+    "imgurl":"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+    "downloadUrl": "/public/m/images/arrow.png",
+    "exclusive": true,
+    "discount": 4.8
+}, {
+    "a": "我是游戏名",
+    "b": "50MB",
+    "c": "即时",
+    "d": "Lorem ipsum dolor.",
+    "url":"http://www.baidu.com",
+    "imgurl":"/public/m/images/test/test_02.png",
+    "downloadUrl": "/public/m/images/arrow.png",
+}, {
+    "a": "我是游戏名",
+    "b": "50MB",
+    "c": "即时",
+    "d": "Lorem ipsum dolor.",
+    "url":"http://www.baidu.com",
+    "imgurl":"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+    "downloadUrl": "/public/m/images/arrow.png",
+    "exclusive": true,
+}, {
+    "a": "我是游戏名",
+    "b": "50MB",
+    "c": "即时",
+    "d": "Lorem ipsum dolor.",
+    "url":"http://www.baidu.com",
+    "imgurl":"https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png",
+    "downloadUrl": "/public/m/images/arrow.png",
     "exclusive": false,
-    "discount": 4.8
-}, {
-    "a": "a",
-    "b": "b",
-    "c": "c",
-    "d": "d",
-    "download": "/public/m/images/arrow.png",
-    "first": "20日",
-    "exclusive": true,
-    "discount": 4.8
-}, {
-    "a": "a",
-    "b": "b",
-    "c": "c",
-    "d": "d",
-    "download": "/public/m/images/arrow.png",
-    "first": "20日",
-    "exclusive": true,
-    "discount": 4.8
-}, {
-    "a": "a",
-    "b": "b",
-    "c": "c",
-    "d": "d",
-    "download": "/public/m/images/arrow.png",
-    "first": "20日",
-    "exclusive": true,
-    "discount": 4.8
 }];
 
-function testAjax1(fn) {
+function testAjax(fn) {
     var data = Math.random() > 0.2 ? testData1 : [];
     setTimeout(function() {
         fn && fn(data);

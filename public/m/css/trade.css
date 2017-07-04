@@ -119,6 +119,9 @@ img {
   width: 100%;
   line-height: 1;
 }
+.temple {
+  display: none;
+}
 /* search 样式 */
 html {
   height: 100%;
