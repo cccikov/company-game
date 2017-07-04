@@ -15,8 +15,11 @@ let less2cssPath = "web/css/"; // less装换css后存放路径
 let cssPath = "web/css/*.css"; // 需要压缩的css路径
 let css2miniPath = "web/css"; // 压缩后的css路径
 
-let browserSyncPath = ["web/**/*.html","web/css/*.css","web/js/*.js"]; // 监视同步路径
-let browserSyncWithoutCssPath = ["web/**/*.html","web/js/*.js"]; // 监视路径不要css
+let imgPath = "web/images/**/*.{png,jpg,gif,ico}"; // 需要压缩的img路径
+let img2miniPath = "web/img"; // 压缩后的img路径
+
+let browserSyncPath = ["web/**/*.html", "web/css/*.css", "web/js/*.js"]; // 监视同步路径
+let browserSyncWithoutCssPath = ["web/**/*.html", "web/js/*.js"]; // 监视路径不要css
 let browserSyncRootPath = "./";
 let browserSyncIndex = "index.html"; // 服务器启动的时候,默认打开的文件
 
@@ -44,15 +47,15 @@ function lesskoala(path) { // 类似考拉那样 , less转换后的css就保存�
         .pipe(gulp.dest(destPath)); // 返回流,调用后在返回值后面再流的操作
 }
 
-function synclessFn(path, base, destPath) {// 用于浏览器同步刷新 , 先转less , 然后reload
+function synclessFn(path, base, destPath) { // 用于浏览器同步刷新 , 先转less , 然后reload
     lessFn(path, base, destPath).pipe(browserSync.reload({ stream: true }));
 }
 
 /**
  * default 任务
  */
-gulp.task('default', ["less", "syncLess2"], function() {
-    console.log("********\n执行了 less & syncLess2\n********");
+gulp.task('default', ["lessmini", "syncLess2"], function() {
+    console.log("********\n执行了 lessmini & syncLess2\n********");
 });
 
 
@@ -104,9 +107,9 @@ gulp.task("minicss", function() {
 
 // less & minicss
 gulp.task("lessmini", function() {
-    lessFn(path, destPath)
+    lessFn(lessPath, lessBasePath, less2cssPath)
         .pipe(minicss())
-        .pipe(rename({ suffix: '.min' })) //重命名
+        // .pipe(rename({ suffix: '.min' })) //重命名
         .pipe(gulp.dest(css2miniPath));
 });
 
@@ -206,13 +209,29 @@ gulp.task('syncKoala', function() {
 /**
  * 压缩图片
  */
-gulp.task('imgmin', function () {
-    gulp.src('web/images/**/*.{png,jpg,gif,ico}')
+
+gulp.task('imgmin', function() {
+    gulp.src(imgPath)
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{ removeViewBox: false }], //不要移除svg的viewbox属性
+            use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
+        }))
+        .pipe(gulp.dest(img2miniPath));
+});
+gulp.task('imgmincache', function() {
+    gulp.src(imgPath)
         .pipe(cache(imagemin({
             progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
+            svgoPlugins: [{ removeViewBox: false }],
             use: [pngquant()]
         })))
-        .pipe(gulp.dest('web/img'));
+        .pipe(gulp.dest(img2miniPath));
 });
 
+
+
+// 清除 gulp-cache 的缓存
+gulp.task('clear', function(done) {
+    return cache.clearAll(done);
+});

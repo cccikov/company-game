@@ -5,6 +5,8 @@
 @bottom :55px;
 @perwidth: 5%;
 @minfont: 0.6rem;
+
+// 滚动条宽度为0
 .scrollbarLess() {
     ::-webkit-scrollbar {
         // 滚动条
@@ -12,6 +14,7 @@
     }
 }
 
+// 折扣共用
 .discountLess() {
     position: relative;
     display: inline-block;
@@ -38,6 +41,7 @@
 }
 
 // 主页 开服 交易top
+// 就是可以左右切换tab的top
 .swiperTopLess() {
     padding: 0 2px;
     &>a:nth-of-type(1) {
@@ -72,12 +76,15 @@
         }
     }
 }
+
+// main的共用 height100% 设定padding-top padding-bottom
 .mainLess(){
     box-sizing: border-box;
     height: 100%;
     padding: @top 0 @bottom;
 }
 
+// 由html - body - #wrap 高度100%
 .height100(@bg: @bgcolor) {
     html {
         height: 100%;
@@ -104,7 +111,6 @@ img {
 .scrollbarLess();
 
 /* 顶部导航共用 */
-
 .top {
     box-sizing: border-box;
     position: fixed;
@@ -129,9 +135,7 @@ img {
     }
 }
 
-
 /* 底部导航共用 */
-
 .bottom {
     box-sizing: border-box;
     position: fixed;
@@ -199,6 +203,7 @@ img {
     }
 }
 
+// 模板
 .temple{
     display:none;
 }
