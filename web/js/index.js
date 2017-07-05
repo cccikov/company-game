@@ -111,7 +111,7 @@ $(function() {
         });
     }
 
-    // 以下应该写在
+    // 以下应该写在loadH5 ajax 加载后的回调函数里面
     /* h5游戏 到底加载 */
     var h5Scroll = new Scroll({
         scroller: $(".web"),
