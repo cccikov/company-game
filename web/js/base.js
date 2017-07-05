@@ -29,6 +29,7 @@ function PageSwiper(obj) {
         onSlideChangeEnd: function(swiper) { // 滑屏完成后触发事件 - 切换 滑屏对应按钮 对应状态
             var _index = swiper.activeIndex;
             _this.button.eq(_index).addClass("active").siblings('a').removeClass("active");
+            _this._action && _this._action(_index);//如果对象有_action
         }
     });
     // 给滑屏对应按钮 绑定 click事件的监听器
@@ -38,6 +39,8 @@ function PageSwiper(obj) {
         that.siblings("a").removeClass("active");
         _this.swiperObj.slideTo(_index);
     });
+}
+PageSwiper.prototype._action = function(index){
 }
 
 /**
