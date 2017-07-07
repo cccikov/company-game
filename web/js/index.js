@@ -66,8 +66,13 @@ $(function() {
     };
 
 
-
-
+    /**
+     * <h5游戏> js 运行顺序
+     *
+     * 首先判断什么时候加载 <h5游戏> [Function loadH5], 先 [complete--网游加载好] 还是先 [pageSwi._action--切换到<h5游戏>]
+     * 当其中一个先触发 , 执行[Function loadH5]里面的回调函数(作为[Function loadH5]的第一参数传入) , 写上异步加载<h5游戏页面的代码>
+     * 在异步加载好后(ajax请求的回调函数里面) , 给 <h5游戏> 添加 "到底加载" 功能
+     */
     loadH5(function(){
         // 这里写异步加载h5游戏页面的代码
         testAjax(function(result) {
