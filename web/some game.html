@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>测试</title>
     <style type="text/css">
-    *{
+    * {
         padding: 0;
         margin: 0;
     }
-    html,body,#wrap{
+
+    * {
+        -webkit-touch-callout: none;
+        /*系统默认菜单被禁用*/
+        -webkit-user-select: none;
+        /*webkit浏览器*/
+        -khtml-user-select: none;
+        /*早期浏览器*/
+        -moz-user-select: none;
+        /*火狐*/
+        -ms-user-select: none;
+        /*IE10*/
+        user-select: none;
+    }
+
+    html,
+    body,
+    #wrap {
         height: 100%;
     }
+
     span {
         position: fixed;
     }
@@ -42,6 +60,10 @@
     $(function() {
         $("#wrap").on("touchmove", function(e) {
             e.preventDefault();
+            e.stopPropagation();
+        }).on("touchstart", function(e) { //长按取消
+            e.preventDefault();
+            e.stopPropagation();
         });
     })
     </script>
@@ -53,6 +75,10 @@
         <span>假设我是游戏页面</span>
         <span>假设我是游戏页面</span>
         <span>假设我是游戏页面</span>
+        <p>微信端 window document html body 可以禁用touchmove默认事件</p>
+        <p>但是chrome浏览器移动端 window document html body 这个四个对象禁用touch默认事件会报警告切禁用无效</p>
+        <p>Unable to preventDefault inside passive event listener due to target being treated as passive</p>
+        <a href="https://www.chromestatus.com/features/5093566007214080">官方解释</a>
     </div>
 </body>
 

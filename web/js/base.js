@@ -1,3 +1,6 @@
+if (window.location.protocol.substr(0, 4) === "file") {
+    alert("请在服务器环境打开，本地无法运行！！！");
+}
 /**
  * 设置 根元素 html 字体大小 用于给定rem相对长度单位
  * @return {number} html的字体大小
@@ -29,7 +32,7 @@ function PageSwiper(obj) {
         onSlideChangeEnd: function(swiper) { // 滑屏完成后触发事件 - 切换 滑屏对应按钮 对应状态
             var _index = swiper.activeIndex;
             _this.button.eq(_index).addClass("active").siblings('a').removeClass("active");
-            _this._action && _this._action(_index);//如果对象有_action
+            _this._action && _this._action(_index); //如果对象有_action
         }
     });
     // 给滑屏对应按钮 绑定 click事件的监听器
@@ -40,8 +43,7 @@ function PageSwiper(obj) {
         _this.swiperObj.slideTo(_index);
     });
 }
-PageSwiper.prototype._action = function(index){
-}
+PageSwiper.prototype._action = function(index) {}
 
 /**
  * 滑动到底刷新
@@ -71,20 +73,20 @@ Scroll.prototype.onscroll = function(event, tar) {
     }
 }
 Scroll.prototype.getData = function(tar) {
-    var _this = this;
-    console.log("到底");
-}
-/*Scroll.prototype._onscroll = function(event, tar) { // 原生判断是否到底
-    var _this = this;
-    var that = tar;
-    // console.log(_this,tar,event);
-    var clientH = _this.scroller.height();
-    var scrollt = _this.scroller[0].scrollTop;
-    var offsetT = _this.bottom[0].offsetTop;
-    if (scrollt + clientH > offsetT) {
-        _this.canGet && _this.getData(tar);
+        var _this = this;
+        console.log("到底");
     }
-}*/
+    /*Scroll.prototype._onscroll = function(event, tar) { // 原生判断是否到底
+        var _this = this;
+        var that = tar;
+        // console.log(_this,tar,event);
+        var clientH = _this.scroller.height();
+        var scrollt = _this.scroller[0].scrollTop;
+        var offsetT = _this.bottom[0].offsetTop;
+        if (scrollt + clientH > offsetT) {
+            _this.canGet && _this.getData(tar);
+        }
+    }*/
 
 
 /**
