@@ -1,0 +1,381 @@
+@import url("./common.less");
+.height100("#fff");
+.main {
+    .mainLess();
+    position: relative;
+    overflow: auto;
+    .main-top {
+        position: absolute;
+        top: @top;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background: #fff;
+        .top-info {
+            // 占0.6+3.6+0.6 rem
+            padding: 0.6rem 0 0;
+            height: 3.6 + 0.6rem; // 高度加多0.6rem 相当于padding-bottom
+            .clearfix();
+            img {
+                float: left;
+                width: 18%; // 相当于3.6rem
+                max-height: 3.6rem;
+                margin: 0 3% 0 5%;
+            }
+            .middle {
+                float: left;
+                width: 54%;
+                min-height: 3.75rem;
+                h5 {
+                    line-height: 1.5;
+                    margin: 0 0 3px;
+                    font-size: 0.9rem;
+                    font-weight: bold;
+                    color: #464646;
+                    .elli();
+                }
+                p {
+                    line-height: 1.5;
+                    color: #707070;
+                    font-size: 0.75rem;
+                    .elli();
+                }
+            }
+            em {
+                box-sizing: border-box;
+                float: left;
+                width: 4rem;
+                height: 4rem;
+                padding: 0.5rem 0 0;
+                background: #f00;
+                color: #fff;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 0.9rem;
+                text-align: center;
+                background: url(../images/discount.jpg) top center/70% no-repeat;
+                &:after {
+                    content: "折";
+                    display: block;
+                    font-weight: 500;
+                    font-size: 0.75rem;
+                    margin: 3px 0 0;
+                }
+            }
+        }
+        .top-button {
+            //占 1.8+0.6rem
+            padding: 0px 1.4rem 0.6rem;
+            .clearfix();
+            a {
+                box-sizing: border-box;
+                float: left;
+                width: 25%;
+                line-height: 1.8rem;
+                height: 1.8rem;
+                text-align: center;
+                border: 1px solid @maincolor;
+                color: @maincolor;
+                font-size: 0.75rem;
+                &:nth-of-type(-n+3) {
+                    border-right: none;
+                }
+                &:nth-of-type(1) {
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                }
+                &:nth-of-type(4) {
+                    border-top-right-radius: 8px;
+                    border-bottom-right-radius: 8px;
+                }
+                &.active {
+                    background: @maincolor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .main-middle {
+        box-sizing: border-box;
+        height: 100%;
+        padding: 0.6+3.6+0.6+1.8+0.6rem 0 0;
+        .content-wrap {
+            height: 100%;
+            .content {
+                height: 100%;
+                overflow: auto;
+            }
+        }
+    }
+}
+
+// 详情
+.content1 {
+    h4 {
+        line-height:1.5;
+        margin: 0 0 8px;
+        color: #333;
+        font-size:0.85rem;
+        text-indent: 0em;
+    }
+    .content1_part1 {
+        padding: 10px 1rem 0;
+        text-align: center;
+        a {
+            position: relative;
+            display: block;
+            line-height: 1.6rem;
+            padding: 0 3rem 0 15px;
+            border-radius: 50px;
+            margin: 0 0 12px;
+            background: #e6e6e6 url(../images/more_right.png) right 5.8px center/0.45rem no-repeat;
+            font-size: 0.75rem;
+            text-align: left;
+            color: #707070;
+            .elli();
+            .label {
+                position: absolute;
+                top: 0.3rem;
+                right: 1rem;
+                width: 1.8rem;
+                height: 1rem;
+                line-height: 1rem;
+                text-align: center;
+                font-size: 10px;
+                color: #fff;
+                &.label-green {
+                    background: #00B285;
+                }
+                &.label-ori {
+                    background: @maincolor;
+                }
+            }
+        }
+        button {
+            color: @maincolor;
+            background: #fff;
+            line-height: 2.5;
+            padding: 0 20px;
+            border: 1px solid @maincolor;
+            border-radius: 100px;
+            margin: 5px 0 12px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .detail-img{
+        padding:10px;
+        background: #E6E6E6;
+        &>div{
+            width:100%;
+        }
+    }
+    .content1_part2{
+        line-height:1.5;
+        padding: 10px 1rem 0;
+        color:#707070;
+        font-size:0.75rem;
+        .brief.hide{
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display:-webkit-box;
+            -webkit-line-clamp:3;//行数
+            -webkit-box-orient: vertical;
+        }
+        .more{
+            position:relative;
+            height:1.4rem;
+            padding:0.7rem 0 0;
+            &:before{
+                content:"";
+                display:block;
+                border-top:1px solid #E3E3E3;
+            }
+            a{
+                position:absolute;
+                top:0;
+                right:0;
+                line-height:1.4rem;
+                padding: 0 17px 0 12px;
+                background: #fff url(../images/more_down.png) right center/12px no-repeat;
+            }
+        }
+    }
+    .content1_part3{
+        line-height:1.5;
+        padding: 10px 1rem 30px;
+        color:#707070;
+        font-size:0.75rem;
+        .clearfix();
+        p{
+            float: left;
+            width:50%;
+        }
+    }
+}
+// 开服
+.content2{
+    color:#707070;
+    ul{
+        padding: 12px 1rem 30px;
+        .clearfix();
+        li{
+            box-sizing:border-box;
+            float: left;
+            width:48%;
+            line-height:3;
+            border:1px solid #E7E7E7;
+            border-radius:100px;
+            margin:0 0 8px;
+            font-size:0.70rem;
+            text-align: center;
+            background: #E7E7E7;
+            &:nth-of-type(2n-1){
+                margin-right: 4%;
+            }
+            &.today{
+                color:@maincolor;
+                border-color:@maincolor;
+                background: #FFE1C4;
+            }
+        }
+    }
+}
+//礼包
+.content3{
+    div{
+        padding: 12px 1rem 30px;
+        a{
+            display:block;
+            padding:6px 20px 6px 10px;
+            margin: 0 0 12px;
+            border-radius:5px;
+            background: #E7E7E7 url(../images/more_right.png) right 10px center/0.45rem no-repeat;
+            line-height:1.5;
+            h4{
+                font-size:0.8rem;
+                color:#4B4B4B;
+                margin: 0 0 3px;
+            }
+            p{
+                color:#868686;
+                font-size:0.70rem;
+                &:nth-of-type(1){
+                    &:before{
+                        content:"剩余数量："
+                    }
+                }
+                &:nth-of-type(2){
+                    &:before{
+                        content:"过期日期："
+                    }
+                }
+                em{
+                    color:#FF9123;
+                    font-style:normal;
+                }
+            }
+        }
+    }
+}
+// 买号
+.content4{
+    &>div{
+        text-align: center;
+        padding: 12px 1rem 30px;
+        a{
+            display:block;
+            padding:6px 20px 6px 10px;
+            margin: 0 0 12px;
+            border-radius:5px;
+            background: #E7E7E7;
+            line-height:1.5;
+            text-align: left;
+            .clearfix();
+            span{
+                float: right;
+                line-height:3rem;
+                font-size: 1rem;
+                color:#FF4000;
+                &:before{
+                    content:"￥";
+                }
+            }
+            div{
+                overflow:hidden;
+                h4{
+                    font-size:0.8rem;
+                    color:#4B4B4B;
+                    margin: 0 0 5px;
+                    .elli();
+                    &:before{
+                        content:"区服：";
+                    }
+                }
+                p{
+                    color:#868686;
+                    font-size:0.70rem;
+                    .elli();
+                }
+            }
+        }
+        button{
+            line-height:3.5;
+            padding: 0 35px;
+            border-radius:100px;
+            margin:10px 0 0;
+            background: @maincolor;
+            color:#fff;
+        }
+    }
+}
+
+.detail-bottom {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: @bottom;
+    // border-top: 1px solid #bfbfbf;
+    background: #E6E6E6;
+    text-align: center;
+    font-size: 0;
+    a {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+            width: 15%;
+            height: 100%;
+            color: #838383;
+            &:before {
+                content: "";
+                display: block;
+                height: 30px;
+                margin: 4px 0 4px;
+            }
+        }
+        &:nth-of-type(1) {
+            &:before {
+                background: url(../images/guanli.png) center/50% no-repeat;
+            }
+        }
+        &:nth-of-type(3) {
+            &:before {
+                background: url(../images/dianping.png) center/50% no-repeat;
+            }
+        }
+        &:nth-of-type(2) {
+            width: 66%;
+            line-height: 34px;
+            margin: 0 2% 0;
+            color: #fff;
+            background: @maincolor;
+            border-radius: 5px;
+        }
+    }
+}
